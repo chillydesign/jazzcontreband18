@@ -612,4 +612,25 @@ $args = array(
 );
 acf_add_options_page( $args );
 
+
+
+
+
+function nice_event_dates($dates) {
+    if (sizeof($dates) == 0) {
+        return '-';
+    } else if (sizeof($dates) == 1) {
+        $nice_date =  strftime( '%d.%m', strtotime( $dates[0]['date'] ));
+        return $nice_date;
+    } else {
+        $first = current($dates);
+        $last = end($dates);
+        $nice_first =  strftime( '%d', strtotime( $first['date'] ));
+        $nice_last =  strftime( '%d.%m', strtotime( $last['date'] ));
+        return $nice_first . ' → '  . $nice_last;
+
+    }
+}
+
+
 ?>

@@ -63,14 +63,14 @@
                         </a>
                     </div>
                     <div class="column">
-                        <div id="date_box">1—28. <br> 10.2018</div>
+                        <div id="date_box">1→28. <br> 10.2018</div>
                     </div>
                 </div>
                 <div id="road_sign"></div>
                 <div id="octagon"></div>
             </div>
 
-            <div id="header_background" style="background-image:url(<?php echo $tdu; ?>/img/jazz_photo_1.jpg);"></div>
+            <div id="header_background" style="background-image:url('<?php echo $tdu; ?>/img/jazz_photo_1.jpg');"></div>
         </header>
 
 
