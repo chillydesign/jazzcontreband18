@@ -1,0 +1,16 @@
+$border-radius : 7px;
+$black: #000;
+$primary-color: #fcea1d;
+$font : normal 62.5%  'Work Sans','Raleway','Open Sans','Nunito','Clear Sans','Poppins','Assistant','Now','Gotham',sans-serif;
+
+$light_grey: #f1f1f1;
+$transition_time: 0.3s;
+
+$font-color: #222;
+
+
+@keyframes spin {
+  from  {  transform: rotate(0deg) }
+  to    {  transform: rotate(360deg)}
+
+}

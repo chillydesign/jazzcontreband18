@@ -1,0 +1,357 @@
+
+header {
+
+	background: $primary-color;
+	height: 180px;
+	position: relative;
+	font-size: 1.1em;
+
+
+	 #branding {
+	    background: $black;
+	    width: 180px;
+	    height: 180px;
+	    position: absolute;
+	    top: 0;
+	    left: 0;
+	    z-index: 30;
+        display: block;
+        cursor: pointer;
+
+	    img {
+			height: auto;
+			width: 180px;
+			margin: auto;
+			padding: 10px;
+	    }
+
+	    span {
+	    	display: none;
+	    }
+	}
+
+	nav {
+		display: none;
+		position: relative;
+		z-index: 20;
+		padding: 90px 0px;
+		text-align: left;
+		width: 300px;
+		max-width: 100%;
+		position: fixed;
+		right: 0;
+		background: rgba(0,0,0,0.9);
+		height: 100vh;
+		overflow-y: scroll;
+
+		ul {
+			color: #eee;
+
+			li {
+				display: block;
+				padding: 0;
+				margin: 0;
+				position: relative;
+				border-bottom: solid 1px rgba(255,255,255,0.4);
+
+				&:hover {
+					background:  transparentize($primary-color, 0.9);
+				}
+				a {
+					color: white;
+					text-decoration: none;
+					display: block;
+					padding: 10px;
+					text-transform: uppercase;
+					font-weight: 700;
+					border-bottom: 2px solid transparent;
+					padding: 10px 20px;
+
+					&:link, &:active, &:visited{
+						color:white;
+					}
+				}
+
+				ul {
+					max-height: 0;
+					overflow: hidden;
+					li {
+						border-bottom: 0;
+					}
+				}
+				ul.show_sub_menu {
+					max-height: 100vh;
+				}
+			}
+			li.current_page_item {
+				background:  transparentize($primary-color, 0.3);
+			}
+
+			li:last-child {border: 0;}
+
+			li.menu-item-has-children{
+				a:after {
+					content: "\f107";
+					display: inline-block;
+					font-family: FontAwesome;
+					font-style: normal;
+					font-weight: 400;
+					line-height: 1;
+					float: right;
+					top: 3px;
+					position: relative;
+				}
+				ul li a:after {
+					display: none;
+				}
+			}
+
+			li.current_page_ancestor{
+				background:  transparentize($primary-color, 0.8);
+				ul {
+					display: block;
+				}
+			}
+		}
+	}
+}
+
+#show_mobile_nav svg {display: block;}
+svg.white_stripes g {
+    fill: #fff;
+}
+
+	#jazz_name {
+		overflow: hidden;
+		background: url(../img/underlay.svg) no-repeat bottom;
+		background-size: contain;
+		position: absolute;
+		height: 100%;
+		top: 0;
+		left: 180px;
+		right: 0;
+		z-index: 4;
+		opacity: .4;
+
+}
+
+
+/*p.login-username {
+    margin-right: 30px;
+    margin-left: 0px;
+}
+
+
+p.login-username, p.login-password {
+    width: calc(50% - 17px);
+    display: inline-block;
+}*/
+
+
+.loginformcontainer {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0,0,0,0.7);
+    z-index: 9;
+    top: 0;
+    display: none;
+}
+
+
+.loginform, .lostpasswd {
+    width: 40%;
+    min-width: 250px;
+    margin: 100px auto;
+    position: relative;
+    /*top: -700px;*/
+    z-index: 9;
+    padding: 50px;
+    box-shadow: 0px 0px 60px 0px rgba(0,0,0,0.8);
+
+}
+
+
+.lostpasswd {display: none;}
+
+.login-lostpsswd {
+	float: right;
+    margin-top: 10px;
+}
+
+input#rememberme {
+    width: 10px;
+    position: relative;
+    top: 8px;
+}
+
+input#rememberme:checked{
+	background-image: url(../img/check.png);
+	background-size: 100%;
+	background-repeat: no-repeat;
+}
+
+input#wp-submit, input.user-submit {
+	background-color: $primary-color;
+	border-radius: $border-radius;
+	font-weight: bold;
+	text-transform: uppercase;
+}
+
+input#wp-submit {
+    font-size: 1em;
+}
+
+
+.lostpasswd input#user_login {
+    margin-bottom: 30px;
+}
+
+p.forgottenpassword {
+    text-align: center;
+    margin: -30px 0 -50px;
+}
+p.notforgotten{
+	text-align: center;
+	margin-right: 0 0 -50px;
+}
+
+#show_mobile_nav {
+    // background: url(../img/burger-menu.svg) no-repeat;
+    //text-indent: -9999px;
+		font-size: 1.2em;
+		text-transform: uppercase;
+		font-weight: bold;
+		background-color: black;
+		color: white;
+		padding: 10px 20px;
+		border-radius: 10px;
+		text-decoration: none;
+		border: 1px solid $primary-color;
+
+    position: absolute;
+    top: 41px;
+    right: 15px;
+    z-index: 9999999;
+}
+
+
+.visible {
+	 display: block;
+    -moz-animation: slideInFromRight 0.7s forwards;
+    -ms-animation: slideInFromRight 0.7s forwards;
+    -o-animation: slideInFromRight 0.7s forwards;
+    -webkit-animation: slideInFromRight 0.7s forwards;
+    animation: slideInFromRight 0.7s forwards;
+}
+
+.visible_sub_menu{
+	 display: block;
+}
+
+@keyframes slideInFromRight {
+  from { transform: translateX(200px);opacity: 0   }
+  to { transform: translateX(00px); opacity: 1  }
+}
+@-moz-keyframes slideInFromRight {
+  from { -moz-transform: translateX(200px);opacity: 0   }
+  to { -moz-transform: translateX(00px); opacity: 1  }
+
+}
+@-webkit-keyframes slideInFromRight {
+  from { -webkit-transform: translateX(200px);opacity: 0   }
+  to { -webkit-transform: translateX(00px); opacity: 1  }
+
+}
+@-ms-keyframes slideInFromRight {
+  from { -ms-transform: translateX(200px);opacity: 0   }
+  to { -ms-transform: translateX(00px); opacity: 1  }
+
+}
+@-o-keyframes slideInFromRight {
+  from { -o-transform: translateX(200px);opacity: 0   }
+  to { -o-transform: translateX(00px); opacity: 1  }
+
+}
+
+
+
+@media (min-width: 768px){
+	header {
+		nav {
+	    	display: inline-block;
+				padding: 30px 0 0 180px;
+				text-align: right;
+				width: 100%;
+				background: none;
+				position: relative;
+				height: inherit;
+				overflow: visible;
+
+
+				ul {
+					padding: 0 15px;
+
+					li {
+						border-bottom: 0;
+						display: inline-block;
+
+						a {
+							color: black;
+							border-bottom: 2px solid transparent;
+							padding: 10px;
+
+							&:link, &:active, &:visited{
+								color:$black;
+							}
+							&:hover {
+								color: $black;
+								border-bottom: 2px solid #000;
+							}
+							&:after {display: none!important;}
+						}
+
+						ul {
+							display: none;
+							left: 0;
+							max-height: 100vh;
+						}
+					}
+					li.current_page_ancestor ul {
+						display: none;
+					}
+
+					li.menu-item-has-children:hover{
+						background: rgba(0,0,0,0.9);
+						a {
+							border-bottom: 0;
+							color: white;
+							display: block;
+							&:link, &:active, &:focus, &:hover {
+								color: white;
+							}
+						}
+
+						ul {
+							position: absolute;
+							display: block;
+							padding: 0;
+							background: rgba(0,0,0,0.9);
+							width: 250px;
+							z-index: 40;
+							li {
+								background: none;
+								border-top: solid 1px;
+								display: block;
+							}
+							li:hover {
+								background: transparentize($primary-color, 0.3);
+							}
+						}
+					}
+				}
+		}
+		#show_mobile_nav {display: none;}
+
+	}
+}
