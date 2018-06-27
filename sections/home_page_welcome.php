@@ -41,51 +41,52 @@ $events = 	new WP_Query(array(
 <div class="container">
     <div class="column_container column_container_reversed">
 
-        <div id="about_jazzcontreband" class=" column big_column green_column">
+        <div id="about_jazzcontreband" class=" column big_column ">
+            <div class="green_box">
 
 
-
-            <div class="column_container" id="big_infos">
-                <?php foreach ($numbers as $number) : ?>
-                    <div class="column">
-                        <div class="big_info">
-                            <span><?php echo $number['number']; ?> </span>
-                            <?php echo $number['text']; ?>
+                <div class="column_container" id="big_infos">
+                    <?php foreach ($numbers as $number) : ?>
+                        <div class="column">
+                            <div class="big_info">
+                                <span><?php echo $number['number']; ?> </span>
+                                <?php echo $number['text']; ?>
+                            </div>
                         </div>
-                    </div>
-                <?php endforeach; ?>
-            </div>
-
-
-            <?php echo $content; ?>
-            <hr class="hr_yellow" />
-
-        </div>
-
-        <div id="agenda_front" class="column small_column yellow_column">
-            <hr class="hr_black" />
-            <h2>Prochainement</h2>
-            <h4>Festival JCB - octobre 2018</h4>
-            <p>Découvrez toute la programmation du festival JazzContreBand ici!</p>
-
-            <?php while ( $events->have_posts() ) : $events->the_post(); ?>
-                <?php $id =  get_the_ID(); ?>
-                <?php $permalink =  get_the_permalink(); ?>
-                <?php $dates = get_field('dates', $id);  ?>
-                <?php $nice_dates =  nice_event_dates($dates) ; ?>
-
-                <hr class="hr_blue" />
-                <div class="upcoming_event upcoming_event_blue">
-                    <h6><?php echo $nice_dates; ?></h6>
-                    <p><strong>Something</strong></p>
-                    <h4><a href="<?php echo $permalink; ?>"><?php the_title(); ?></a></h4>
-                    <p>Location</p>
+                    <?php endforeach; ?>
                 </div>
 
-            <?php endwhile; ?>
+
+                <?php echo $content; ?>
+                <hr />
+            </div>
+        </div>
+
+        <div id="agenda_front" class="column small_column ">
+            <div class="yellow_box">
+                <hr  />
+                <h2>Prochainement</h2>
+                <h4>Festival JCB - octobre 2018</h4>
+                <p>Découvrez toute la programmation du festival JazzContreBand ici!</p>
+
+                <?php while ( $events->have_posts() ) : $events->the_post(); ?>
+                    <?php $id =  get_the_ID(); ?>
+                    <?php $permalink =  get_the_permalink(); ?>
+                    <?php $dates = get_field('dates', $id);  ?>
+                    <?php $nice_dates =  nice_event_dates($dates) ; ?>
+
+                    <hr  />
+                    <div class="upcoming_event upcoming_event_blue">
+                        <h6><?php echo $nice_dates; ?></h6>
+                        <p><strong>Something</strong></p>
+                        <h4><a href="<?php echo $permalink; ?>"><?php the_title(); ?></a></h4>
+                        <p>Location</p>
+                    </div>
+
+                <?php endwhile; ?>
 
 
-
+            </div>
         </div>
 
 
