@@ -38,51 +38,54 @@
 	<body <?php body_class(); ?>>
 
 
-		<header class="header" id="header">
-			<a href="<?php echo home_url(); ?>"  id="branding"><img src="<?php echo get_template_directory_uri(); ?>/img/logo.svg" alt="Jazz Contreband"> <span>Jazz Contreband</span></a>
-			<nav id="navigation_menu" role="navigation">
-				<ul>
-					<?php chilly_nav('header-menu'); ?>
-					<?php if(is_user_logged_in()) : ?>
-						<?php chilly_nav('loggedin-menu'); ?>
-						<li><a href="<?php echo wp_logout_url( site_url('/')  ); ?>">Déconnexion</a></li>
-					<?php endif; ?>
-					<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-377"><a target="_blank" href="https://www.facebook.com/jazzcontreband"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-				</ul>
+        <header>
 
-			</nav>
-			<a href="#" id="show_mobile_nav">Menu </a>
+            <nav>
+                <div class="container">
+                    <a href="#" id="menu_button">Menu</a>
+                    <ul id="menu_navigation">
+                        <?php chilly_nav('header-menu'); ?>
+                        <?php if(is_user_logged_in()) : ?>
+                            <?php chilly_nav('loggedin-menu'); ?>
+                            <li><a href="<?php echo wp_logout_url( site_url('/')  ); ?>">Déconnexion</a></li>
+                        <?php endif; ?>
+                    	<!-- <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-377"><a target="_blank" href="https://www.facebook.com/jazzcontreband"><i class="fa fa-facebook" aria-hidden="true"></i></a></li> -->
+                    </ul>
+                </div>
+            </nav>
+            <div class="container">
+                <div class="column_container">
+                    <div class="column">
+                        <a href="<?php echo home_url(); ?>" title="Jazzcontreband" class="branding">
+                            <span class="logo_jazz">jazz</span>
+                            <span class="logo_contre">contre</span>
+                            <span class="logo_band">band</span>
+                        </a>
+                    </div>
+                    <div class="column">
+                        <div id="date_box">1—28. <br> 10.2018</div>
+                    </div>
+                </div>
+                <div id="road_sign"></div>
+                <div id="octagon"></div>
+            </div>
 
-			<p id="jazz_name"></p>
-			<div class="yellow_stripes border_image border_top"></div>
-
-			<!-- <div class="container">
-				<div class="row">
-					<div class="col-sm-3 col-sm-push-0 col-xs-10 col-xs-push-1">
-						<a href="<?php echo home_url(); ?>" class="branding"><?php bloginfo('name'); ?></a>
-					</div>
-					<div class="col-sm-9">
-						<nav id="navigation_menu" role="navigation">
-							<ul>
-								<?php chilly_nav('header-menu'); ?>
-								<?php if(is_user_logged_in()) : ?>
-									<?php chilly_nav('loggedin-menu'); ?>
-									<li><a href="<?php echo wp_logout_url( site_url('/')  ); ?>">Logout</a></li>
-								<?php else: ?>
-									<li><a href="<?php echo  site_url('/login'); ?>">Login</a></li>
-								<?php endif; ?>
-							</ul>
-
-						</nav>
-					</div>
-
-				</div>
-				<a href="#" id="menu_button" >Menu</a>
-			</div> -->
+            <div id="header_background" style="background-image:url(<?php echo $tdu; ?>/img/jazz_photo_1.jpg);"></div>
+        </header>
 
 
 
-		</header>
+
+
+
+
+
+
+
+<?php if(false) : ?>
+
+
+
 			<?php if(!is_user_logged_in()) : ?>
 				<div class="loginformcontainer">
 					<div>
@@ -114,4 +117,4 @@
 				</div>
 			<?php endif; ?>
 
-			<div style="background:white;">
+    <?php endif; ?>

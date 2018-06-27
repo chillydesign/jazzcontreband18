@@ -1,286 +1,247 @@
 
+
+@import "variables";
 @import "reset";
 @import "bxslider";
-@import "variables";
 @import "header";
-@import "patterns";
-@import "sections";
+// @import "patterns";
+// @import "sections";
 @import "calendar";
 
+
+@import "variables";
+@import "reset";
+@import "typography";
+@import "header";
+@import "footer";
+
+
+
+
+
+@media (min-width: $mobile_width) { }
+@media (min-width: $tablet_width) { }
+@media (min-width: 1200px) { }
+
+
 body {
-	font: $font;
-	line-height: 150%;
-	background: black;
-	color: $black;
-}
-
-/*TYPOGRAPHY*/
-h1,h2,h3,h4,h5 {line-height: 125%;}
-
-h1 {padding:0 0 0px;font-weight: normal; line-height: 150%;
-    font-size: 4em;}
-h2 {font-size: 3em; padding: 0 0 0px; line-height: 170%;}
-h1 + p, h2 + p {margin-top: 30px;}
-h3 {font-size: 2.21em;padding:0 0 20px;}
-h4 {font-size: 1.69em;padding:0 0 10px;font-weight: bold;text-transform: uppercase}
-
-p { font-size: 1.3em;padding:0 0 30px;line-height: 160%;  }
-li { font-size: 1.5em;padding:0 0 5px;line-height: 160%  }
-
-section p, section li {font-size:1.8em;}
-
-
-li li, li p , dl p , dl li {font-size: inherit;}
-ul ul , ul ol, ol ol, dl ul, dl ol {font-size: inherit}
-
-
-dl {
-	margin: 0 0 20px;
-	font-size: 1.5em
-}
-dt {
-	font-weight: bold;
-	padding:0 0 5px;
-}
-dd {
-	margin: 0 0 15px;
-}
-
-iframe {width: 100%!important; height: 300px;}
-
-
-
-@media (min-width: 1200px){
-	h1 {font-size: 5em;}
-	h2 {font-size: 3.4em}
-	h3 {font-size: 2.41em}
-	h4 {font-size: 1.79em}
-	section p, section li  {font-size: 1.8em;}
-
-}
-
-
-
-
-
-a {transition: all 0.3s}
-a:link, a:active, a:visited {color: black;}
-a:hover {color:darken($primary-color, 20)  ;}
-
-h6 a, #submit_course_form, aside h6 a {
-	border: 2px solid $primary-color;
-    border-radius: $border-radius;
-    display: inline-block;
-    text-align: center;
-    margin: 10px 0;
-    color: $primary-color!important;
-    padding: 10px 20px 14px;
+    font: normal 62.5%  $font_stack;
+    background: white;
     position: relative;
-    font-size: 1.8em;
-    text-decoration: none;
-    line-height: 150%;
-    &:link, &:active, &:focus {
-    	color:$primary-color!important;
-    }
-    &:hover{
-    	background-color: $primary-color;
-    	color: $black!important;
-    }
+    color: $font_color;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 
 }
 
 
-#submit_course_form, .white h6 a, .checkers h6 a, .stripes h6 a, .white h6 a  {background: black; border:none; color: white!important; text-transform: uppercase;font-weight: bold; cursor: pointer;}
-
-p + h6 a {margin-top: -10px;}
-
-strong, b {font-weight: bold;}
-em, i {font-style: italic}
-
-table {
-	width: 100%;
-	margin:0 0 40px;
-}
-
-th, td {font-size: 1.5em;padding:10px;border:0}
-section td {font-size: 2em;line-height: 160%;padding:0 0 10px;}
-
-blockquote {
-	padding:20px 0 20px 40px;
-	border-left:4px solid #888;
-	margin:40px 20px 40px 40px;
-	font-size: 140%;
-	font-style: italic;
-	max-width: 700px;
-}
-blockquote p:last-child {padding-bottom: 0}
-
-form {
-	margin: 0 0 20px;
-}
-
-	form li {
-		font-size: 1em;
-		margin:0 0 20px;
-	}
-	input, textarea {padding: 10px;width: 100%;font-size: 1em;border:1px solid #f1f1f1}
-	/*appearance:none;*/
-
-	textarea {height: 100px;}
+.branding {
+    padding: 0px 0;
+    margin: 0 0 30px;
+    height: 400px;
+    position: relative;
+    text-align: center;
+    display: block;
 
 
-section img {width: 100%; height:auto;}
-img.pleine_largeur {
-    margin: auto;
-    width: 100%;
-}
-
-@media (min-width: 768px){
-	section img.smaller {
-		width: 70%;
-	    height: auto;
-	    margin: auto 15%;
-	}
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-	/*FOOTER*/
-	footer {
-		background:$black;
-		color: white;
-		padding:20px 0;
-		text-align: center;
-		position: relative;
-		p {
-			padding:0;
-			margin-bottom: 5px;
-		}
-		a {
-			color: white;
-		}
-		a, a:link, a:focus, a:hover, a:visited{
-			color: white;
-			font-weight: bold;
-			text-decoration: none;
-		}
-
-		a.logout, a.login {
-			font-size: 1.1em;
-			text-transform: uppercase;
-			display: block;
-		}
-	}
-
-	@media (min-width: 520px){
-		footer p {
-			float: left;
-			width: 320px;
-		}
-		footer a.logout, footer a.login {
-					font-size: 1.1em;
-					text-transform: uppercase;
-					width: 160px;
-					float: right;
-				}
-
-	}
-
-
-
-.loading {
-	animation: spin 1s linear infinite;
-	width:20px;
-	display: inline-block;
-	height: 20px;
-	border:3px solid $primary-color;
-	border-radius: 7px;
-	position: relative;
-	text-align: center;
-	margin: auto;
-	overflow: hidden;
-
-	&:after, &:before {
-		@extend .loading;
-		content:'';
-		opacity: 0.6;
-		position:absolute;
-		top:5px;
-		left: 5px;
-		width: 14px;
-		height: 14px;
-	}
-	&:before {
-		bottom:5px;
-		top:auto;
-		left:auto;
-		right:5px;
-	}
-}
-
-.protected-post-form {
-	label.pass-label {
-	    font-size: 1em;
-			display: none;
-	}
-	input.button {
-    margin-top: -1px;
-    font-size: 1em;
-	}
-
-}
-
-
-.inscription-tremplins {
-	form {
-		p {
-			padding-bottom: 5px;
-		}
-		h3 {
-			font-weight: bold;
-			margin: 71px 0 20px;
-			padding: 0 0 10px;
-			font-size: 2.6em;
-			display: block;
-			border-bottom: solid 1px grey;
-		}
-		input {
-			margin-bottom: 20px;
-		}
-		div.wpcf7 input[type="file"] {
-		    cursor: pointer;
-		    line-height: 0;
-		    background: white;
-		}
-	}
-
-}
-
-.acceptance_box {
-    padding: 5px 20px 13px;
-    background: $primary-color;
-    margin:20px 0 -10px;
-    color: $black;
-    label {
-        display: flex;
-    }
     span {
-        line-height: 120%;
+        display: block;
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: top center;
+        width: 100%;
+        height: 150px;
+        text-indent: -9999px;
+        position: relative;
+        top:0;
+        z-index: 1;
+
+        @media (min-width: $mobile_width) {
+            width: 400px;
+            position: absolute;
+        }
+
+        &.logo_jazz {
+            background-image:  url('../img/jazz.svg');
+            height: 250px;
+        }
+        &.logo_contre {
+            background-image:  url('../img/contre.svg');
+            top: -70px;
+            z-index: 2;
+            @media (min-width: $mobile_width) {
+                left: -100px;
+                top: 180px;
+            }
+        }
+        &.logo_band {
+            background-image:  url('../img/band.svg');
+            top: -100px;
+            z-index: 3;
+
+            @media (min-width: $mobile_width) {
+                top: 230px;
+                left: 60px;
+            }
+        }
+
     }
-    input {
-        display: inline;
-        width: auto;
-        padding: 0px;
-        margin:5px 10px 5px 0;
+}
+
+
+
+section  {
+    img {
+        width: 100%;
+        height: auto;
+        margin: 0 0 30px;
     }
+    margin: 0 0 50px;
+}
+
+
+#about_jazzcontreband {
+    padding: 20px 50px;
+    background: $green;
+    color: white;
+    position: relative;
+    top: -20px;
+
+    @media (min-width: $mobile_width) {
+        width: 55%;
+        top: -150px;
+    }
+
+    h2, h3 {
+        color: white;
+    }
+
+    #big_infos {
+        flex-direction: row;
+    }
+    .big_info {
+        text-align: center;
+        font-size: #{$font_size * 0.8};
+        letter-spacing: 3px;
+        margin: 0 0 20px;
+        @media (min-width: $mobile_width) {
+            font-size: $font_size;
+        }
+        span {
+            font-size: 4em;
+            display: block;
+            font-weight: bold;
+            line-height: 0.9;
+            letter-spacing: 0;
+            @media (min-width: $mobile_width) {
+                font-size: 5em;
+            }
+            @media (min-width: $tablet_width) {
+                font-size: 6em;
+            }
+        }
+    }
+}
+
+#agenda_front {
+    padding: 20px 50px;
+
+    position: relative;
+    z-index: 10;
+    background: $yellow;
+    color: $black;
+    @media (min-width: $mobile_width) {
+        width: 40%;
+        margin: -30px 0 0;
+    }
+}
+
+
+#featured_event {
+    margin: 130px 0 40px;
+    #featured_banner {
+        background: $blue;
+        color: white;
+        padding: 30px 0 80px;
+        @media (min-width: $mobile_width) {
+            padding: 30px 0;
+        }
+        h2 {
+            padding: 0;
+        }
+    }
+    #featured_image {
+        padding: 30px 0 0px;
+        margin: -70px 0 0 ;
+        @media (min-width: $mobile_width) {
+            width: 55%;
+            padding: 30px 0;
+            margin: 0;
+        }
+    }
+    #featured_text {
+
+        @media (min-width: $mobile_width) {
+            width: 40%;
+            padding: 35px 0 0;
+        }
+    }
+
+    span.drop_cap {
+        font-size: 3em;
+        font-weight: bold;
+        text-transform: uppercase;
+        margin: 7px 5px 0px 0;
+        display: inline-block;
+        line-height: 1;
+    }
+    p.meta {
+        color: $medium_grey;
+        font-style: italic;
+    }
+}
+
+
+#rotated_warning_line_container {
+    overflow-x: hidden;
+    position: absolute;
+    top:0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+}
+
+#rotated_warning_line {
+    background: url('../img/warning_line.svg') repeat-x top center;
+    background-size: 124px 80px;
+    width: 300%;
+    height: 124px;
+    transform: rotate(-20deg);
+    left: -500px;
+    top:30%;
+    position: absolute;
+
+
+}
+
+.upcoming_event {
+    h6 {
+        font-size: 5em;
+        padding: 0;
+        text-transform: uppercase;
+        margin-top: -10px;
+    }
+    p{
+        padding-bottom: 0;
+    }
+    h5 {
+        font-size: 2.5em;
+        padding: 0;
+        text-transform: uppercase;
+    }
+
+    &.blue { color: $blue; }
+    &.green { color: $green; }
 }
