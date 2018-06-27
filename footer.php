@@ -25,8 +25,8 @@
 
 
 <?php $tdu  =  get_template_directory_uri() ; ?>
-<!-- <script type="text/javascript" src="<?php echo $tdu; ?>/bower_components/jquery/dist/jquery.min.js"></script> -->
-<script type='text/javascript' src='<?php echo get_site_url(); ?>/wp-includes/js/jquery/jquery.js?ver=1.12.4'></script>
+
+<!-- <script type='text/javascript' src='<?php echo get_site_url(); ?>/wp-includes/js/jquery/jquery.js?ver=1.12.4'></script>
 <script type="text/javascript" src="<?php echo $tdu; ?>/bower_components/underscore/underscore-min.js"></script>
 <script type="text/javascript" src="<?php echo $tdu; ?>/bower_components/bxslider-4/dist/jquery.bxslider.min.js"></script>
 <script type="text/javascript" src="<?php echo $tdu; ?>/bower_components/matchHeight/dist/jquery.matchHeight-min.js"></script>
@@ -34,8 +34,10 @@
 <script type="text/javascript" src="<?php echo $tdu; ?>/bower_components/clndr/src/clndr.js "></script>
 <script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/js/min/featherlight.min.js"></script>
 <script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/js/min/featherlight.gallery.min.js"></script>
-<script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/js/min/jquery.justifiedGallery.min.js"></script>
-<script type="text/javascript" src="<?php echo $tdu; ?>/js/scripts.js?v=<?php echo wf_version(); ?>"></script>
+<script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/js/min/jquery.justifiedGallery.min.js"></script> -->
+
+
+<script type="text/javascript" src="<?php echo $tdu; ?>/js/min/scripts.bundle.js?v=<?php echo wf_version(); ?>"></script>
 <!-- <script type="text/javascript" src="<?php echo $tdu; ?>/js/scripts.js"></script> -->
 
 <?php wp_footer(); ?>
