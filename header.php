@@ -37,7 +37,7 @@
 	<body <?php body_class(); ?>>
 
 
-        <header>
+
 
             <nav>
                 <div class="container">
@@ -52,25 +52,9 @@
                     </ul>
                 </div>
             </nav>
-            <div class="container">
-                <div class="column_container">
-                    <div class="column">
-                        <a href="<?php echo home_url(); ?>" title="Jazzcontreband" class="branding">
-                            <span class="logo_jazz">jazz</span>
-                            <span class="logo_contre">contre</span>
-                            <span class="logo_band">band</span>
-                        </a>
-                    </div>
-                    <div class="column">
-                        <div id="date_box">1→28. <br> 10.2018</div>
-                    </div>
-                </div>
-                <div id="road_sign"></div>
-                <div id="octagon"></div>
-            </div>
+    
 
-            <div id="header_background" style="background-image:url('<?php echo $tdu; ?>/img/jazz_photo_1.jpg');"></div>
-        </header>
+
 
 
 

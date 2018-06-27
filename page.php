@@ -14,7 +14,7 @@
 
 
 		<!-- article -->
-		<article id="post-<?php the_ID(); ?>" class="container">
+		<article id="post-<?php the_ID(); ?>" >
 			<?php if( !post_password_required( $post )): ?>
 				<?php include('section-loop.php'); ?>
 				<?php if( have_rows('galleries') ) get_template_part('gallery_content'); ?>

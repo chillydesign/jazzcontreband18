@@ -1,8 +1,8 @@
 
 <?php
+$tdu = get_template_directory_uri();
 $content =  get_sub_field('content');
 $numbers =  get_sub_field('numbers');
-
 $events = 	new WP_Query(array(
     'post_type' => 'evenement_festival',
     'posts_per_page' => 3,
@@ -19,13 +19,30 @@ $events = 	new WP_Query(array(
 ));
 
 ?>
+
+<header>
+    <div class="container">
+        <div class="column_container">
+            <div class="column small_column">
+                <?php get_template_part( 'partials/logo' ); ?>
+            </div>
+            <div class="column large_column">
+                <div id="date_box">1→28. <br> 10.2018</div>
+            </div>
+        </div>
+
+        <div id="road_sign"></div>
+        <div id="octagon"></div>
+    </div>
+
+    <div id="header_background" style="background-image:url('<?php echo $tdu; ?>/img/jazz_photo_1.jpg');"></div>
+</header>
+
 <div class="container">
     <div class="column_container column_container_reversed">
 
+        <div id="about_jazzcontreband" class=" column big_column green_column">
 
-        <div class="column" id="about_jazzcontreband">
-
-            <hr class="hr_yellow" />
 
 
             <div class="column_container" id="big_infos">
@@ -39,13 +56,13 @@ $events = 	new WP_Query(array(
                 <?php endforeach; ?>
             </div>
 
-            <hr class="hr_yellow" />
+
             <?php echo $content; ?>
             <hr class="hr_yellow" />
 
         </div>
 
-        <div class="column" id="agenda_front">
+        <div id="agenda_front" class="column small_column yellow_column">
             <hr class="hr_black" />
             <h2>Prochainement</h2>
             <h4>Festival JCB - octobre 2018</h4>
@@ -53,14 +70,15 @@ $events = 	new WP_Query(array(
 
             <?php while ( $events->have_posts() ) : $events->the_post(); ?>
                 <?php $id =  get_the_ID(); ?>
+                <?php $permalink =  get_the_permalink(); ?>
                 <?php $dates = get_field('dates', $id);  ?>
                 <?php $nice_dates =  nice_event_dates($dates) ; ?>
 
                 <hr class="hr_blue" />
-                <div class="upcoming_event blue">
+                <div class="upcoming_event upcoming_event_blue">
                     <h6><?php echo $nice_dates; ?></h6>
                     <p><strong>Something</strong></p>
-                    <h5><?php the_title(); ?></h5>
+                    <h4><a href="<?php echo $permalink; ?>"><?php the_title(); ?></a></h4>
                     <p>Location</p>
                 </div>
 
@@ -74,4 +92,4 @@ $events = 	new WP_Query(array(
 
 
     </div>
-</div>
+</header>

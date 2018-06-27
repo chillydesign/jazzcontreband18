@@ -36,58 +36,6 @@ body {
 }
 
 
-.branding {
-    padding: 0px 0;
-    margin: 0 0 30px;
-    height: 400px;
-    position: relative;
-    text-align: center;
-    display: block;
-
-
-    span {
-        display: block;
-        background-repeat: no-repeat;
-        background-size: contain;
-        background-position: top center;
-        width: 100%;
-        height: 150px;
-        text-indent: -9999px;
-        position: relative;
-        top:0;
-        z-index: 1;
-
-        @media (min-width: $mobile_width) {
-            width: 400px;
-            position: absolute;
-        }
-
-        &.logo_jazz {
-            background-image:  url('../img/jazz.svg');
-            height: 250px;
-        }
-        &.logo_contre {
-            background-image:  url('../img/contre.svg');
-            top: -70px;
-            z-index: 2;
-            @media (min-width: $mobile_width) {
-                left: -100px;
-                top: 180px;
-            }
-        }
-        &.logo_band {
-            background-image:  url('../img/band.svg');
-            top: -100px;
-            z-index: 3;
-
-            @media (min-width: $mobile_width) {
-                top: 230px;
-                left: 60px;
-            }
-        }
-
-    }
-}
 
 
 
@@ -102,14 +50,11 @@ section  {
 
 
 #about_jazzcontreband {
-    padding: 20px 50px;
-    background: $green;
-    color: white;
+
     position: relative;
     top: -20px;
 
     @media (min-width: $mobile_width) {
-        width: 55%;
         top: -150px;
     }
 
@@ -119,12 +64,16 @@ section  {
 
     #big_infos {
         flex-direction: row;
+        border-bottom: 3px solid $yellow;
+        border-top: 3px solid $yellow;
+        padding: 30px 0;
+        margin: 20px 0 30px;
     }
     .big_info {
         text-align: center;
         font-size: #{$font_size * 0.8};
         letter-spacing: 3px;
-        margin: 0 0 20px;
+
         @media (min-width: $mobile_width) {
             font-size: $font_size;
         }
@@ -145,14 +94,11 @@ section  {
 }
 
 #agenda_front {
-    padding: 20px 50px;
 
     position: relative;
     z-index: 10;
-    background: $yellow;
-    color: $black;
+
     @media (min-width: $mobile_width) {
-        width: 40%;
         margin: -30px 0 0;
     }
 }
@@ -233,15 +179,40 @@ section  {
         text-transform: uppercase;
         margin-top: -10px;
     }
-    p{
+    p {
         padding-bottom: 0;
     }
-    h5 {
+    h4 {
         font-size: 2.5em;
         padding: 0;
         text-transform: uppercase;
     }
 
-    &.blue { color: $blue; }
-    &.green { color: $green; }
+    &.upcoming_event_blue { color: $blue; }
+    &.upcoming_event_green { color: $green; }
+}
+
+
+
+#event_information {
+    position: relative;
+    top: -20px;
+
+    h1 {
+        padding: 0;
+        margin: 0
+    }
+
+    @media (min-width: $mobile_width) {
+        top: -300px;
+    }
+}
+
+#ticketing {
+    position: relative;
+    top: -20px;
+
+    @media (min-width: $mobile_width) {
+        top: -20px;
+    }
 }
