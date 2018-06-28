@@ -15,6 +15,8 @@
 <?php $lineup = get_field('line-up'); ?>
 <?php $website = get_field('website'); ?>
 <?php $countries = get_field('countries'); ?>
+<?php $artist_name_minor = get_field('artist_name_minor'); ?>
+
 <?php $id = get_the_ID(); ?>
 <?php $has_image =  has_post_thumbnail(); ?>
 <?php $image = ($has_image)  ?  get_the_post_thumbnail_url() :  get_template_directory_uri() . '/img/placeholder.jpg'; ?>
@@ -41,13 +43,12 @@
             <div  id="event_information" class="column big_column ">
                 <div class="green_box">
 
-                    <hr />
-                    <h1><?php the_title(); ?>
+                    <h1 class="bordered_title"><?php the_title(); ?>
                         <?php if($artist_name): ?>
                             - <?php echo $artist_name; ?><br>
                         <?php endif; ?>
                     </h1>
-                    <hr  />
+
                     <?php if( $styles) : ?>
                         <p class="event_styles">
                             <?php $i = 1;
@@ -129,7 +130,19 @@
                     </div>
                 <?php endif; // end of if hasimage; ?>
 
+
+                <?php if ($members && $artist_name_minor ) :  ?>
+                    <div id="map_section">
+                        <?php echo do_shortcode('[jazz_membres_map]'); ?>
+                    </div>
+                <?php endif; // end of if members ?>
+
+
+
+
             </div> <!-- END OF EVENTINFORMATION -->
+
+
 
 
             <div id="ticketing" class="column small_column ">
@@ -160,14 +173,68 @@
                         </p>
                     <?php endif;  // end of if ticketinglink ?>
                 </div> <!-- END OF YELLOWBOX -->
-                <div id="map_section">
-                    <?php if ($members) :  ?>
-                        <?php echo do_shortcode('[jazz_membres_map]'); ?>
-                    <?php endif; // end of if members ?>
-                </div>
 
 
 
+
+                    <?php if($artist_name_minor): ?>
+                        <?php $countries_minor = get_field('countries_minor'); ?>
+                        <?php $line_up_minor = get_field('line-up_minor'); ?>
+                        <?php $website_minor = get_field('website_minor'); ?>
+                        <?php $description_minor = get_field('description_minor'); ?>
+                        <?php $minor_photo = get_field('photo_minor'); ?>
+                        <div class="yellow_box">
+                            <div class="content event_membres_details">
+
+                                <h2 class="bordered_title"> <?php echo $artist_name_minor; ?></h2>
+
+
+                                <?php if($countries_minor): ?>
+                                    <p class="event_countries">
+                                        <i class="fa fa-globe" aria-hidden="true"></i>
+                                        <?php echo $countries_minor; ?></p>
+                                <?php endif; // end of if countries minor ?>
+                                <?php echo $description_minor ;?>
+
+                                <?php if($line_up_minor) : ?>
+                                    <div class="line-up">
+                                        <p>Line-up: </p>
+                                        <?php echo $line_up_minor;?>
+                                    </div>
+                                <?php endif; // end if linupminor ?>
+                                <?php if($website_minor): ?>
+                                    <div class="website">
+                                        <p>
+                                            <a class="event_website" href="<?php echo $website_minor; ?>" target="_blank" >
+                                                <i class="fa fa-link" aria-hidden="true"></i>
+                                                <?php echo $website_minor;?>
+                                            </a>
+                                        </p>
+                                    </div>
+                                <?php endif; // end if websiteminor ?>
+                            </div>
+                        </div> <!-- END OF YELLOW BOX -->
+
+
+
+                        <?php if ($minor_photo): ?>
+                        <div class="event_featured_image">
+                            <img src="<?php echo $minor_photo['url']; ?>">
+                            <?php if ($minor_photo['description'] != '') : ?>
+                                <p class="copyright_info">
+                                    <?php echo $minor_photo['description']; ?>
+                                </p>
+                            <?php endif; ?>
+                        </div>
+                        <?php endif; // end of if $minor_photo; ?>
+
+                        <?php endif; // end if $artist_name_minor ?>
+
+                        <?php if ($members && $artist_name_minor == false ) :  ?>
+                            <div id="map_section">
+                                <?php echo do_shortcode('[jazz_membres_map]'); ?>
+                            </div>
+                        <?php endif; // end of if members ?>
 
 
             </div> <!-- END OF #TICKETING -->
@@ -199,33 +266,6 @@
 
 
 
-<?php if(get_field('artist_name_minor')){ ?>
-
-    <section class="section  section_colonnes " style="background-color: black;">
-        <div class="container section2col">
-            <div class="row">
-                <div class="sectioncol col-sm-6 colnmb1 black ">
-                    <div class="content event_membres_details">
-                        <h2> <?php echo get_field('artist_name_minor'); ?></h2><br>
-                        <?php if(get_field('countries_minor')){ ?><p class="event_countries"> <i class="fa fa-globe" aria-hidden="true"></i>  <?php echo get_field('countries_minor'); ?></p><?php } ?>
-                        <?php echo get_field('description_minor') ;?>
-                        <?php if(get_field('line-up_minor')){?><div class="line-up"><p>Line-up: </p><?php echo get_field('line-up_minor');?></div><?php } ?>
-                            <?php if(get_field('website_minor')){?><div class="website"><p><a class="event_website" href="<?php echo get_field('website_minor'); ?>" target="_blank" ><i class="fa fa-link" aria-hidden="true"></i>  <?php echo get_field('website_minor');?></a></p></div><?php } ?>
-
-                        </div>
-                    </div>
-                    <div class="sectioncol col-sm-6 colnmb2 black event_featured_image">
-                        <?php $minor_photo = get_field('photo_minor'); ?>
-                        <div class="event_featured_image_inner">
-                            <img src="<?php echo $minor_photo['url']; ?>">
-                            <?php if ($minor_photo['description'] != '') : ?><p class="copyright_info"><?php echo $minor_photo['description']; ?></p><?php endif; ?>
-                        </div>
-
-                    </div>
-                </div> <!-- END OF ROW -->
-            </div><!--  END OF CONTAINER -->
-        </section>
-    <?php } ?>
 
 
 

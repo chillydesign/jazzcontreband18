@@ -158,7 +158,9 @@ h6 a, a h6 {
     @media (min-width: $mobile_width) {
         display: inline-block;
     }
-
+    &:link, &:active, &:visited {
+        color:white;
+    }
     &:hover{
         color:white;
         background: darken($blue, 10);
