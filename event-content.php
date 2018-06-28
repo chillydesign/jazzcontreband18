@@ -2,12 +2,11 @@
 <!-- SHARED TEMPLATE BEWEEN FESTIVAL AND SAISON EVENEMENTS -->
 <?php $ticketing_link = get_field('ticketing_link'); ?>
 <?php $practical_info = get_field('information'); ?>
-<?php $date = get_field('date'); ?>
+<?php $dates = get_field('dates'); ?>
 <?php $members = get_field('members'); ?>
 <?php $tarif_plein = get_field('tarif_plein'); ?>
 <?php $tarifs_reduits = get_field('tarifs_reduits'); ?>
 <?php $tarif_passe_partout_jcb = get_field('tarif_passe-partout_jcb'); ?>
-<?php $ticketing_link = get_field('ticketing_link'); ?>
 <?php $styles = get_field('styles'); ?>
 <?php $time = get_field('time'); ?>
 <?php $artist_name = get_field('artist_name'); ?>
@@ -27,11 +26,11 @@
             <div class="column small_column">
                 <?php get_template_part( 'partials/logo' ); ?>
             </div>
-            <div class="column large_column">
+            <div class="column big_column">
             </div>
         </div>
     </div>
-    <div id="header_background" style="background-image:url('<?php echo $image; ?>"></div>
+    <div id="header_background" class="event_bg" style="background-image:url('<?php echo $image; ?>"></div>
 </header>
 
 <!-- article -->
@@ -67,18 +66,9 @@
 
                     <?php if(have_rows('dates', $id)) : ?>
                         <p class="event_info">
-                            <?php $numrows = count(get_field( 'dates' ) );?>
+                            <?php $numrows = count( $dates );?>
                             <?php if($numrows != 0){?><span><i class="fa fa-calendar" aria-hidden="true"></i> <?php } ?>
-                                <?php $i=1; ?>
-                                <?php while ( have_rows('dates', $id) ) : the_row() ; ?>
-                                    <?php if($i == $numrows ){
-                                        echo get_sub_field('date');
-                                    } else {
-                                        $pieces = explode(" ",  get_sub_field('date'));
-                                        echo $pieces['0'] . ' - ';
-                                    } ?>
-                                    <?php $i++; ?>
-                                <?php endwhile; ?>
+                                <?php echo nice_event_dates( $dates   ); ?>
                             </span> |
                             <?php if ( $time ) :?>
                                 <span><i class="fa fa-clock-o" aria-hidden="true"></i> <?php echo $time; ?></span> |
@@ -183,7 +173,7 @@
                         <?php $website_minor = get_field('website_minor'); ?>
                         <?php $description_minor = get_field('description_minor'); ?>
                         <?php $minor_photo = get_field('photo_minor'); ?>
-                        <div class="yellow_box">
+                        <div class="yellow_box" id="minor_artist">
                             <div class="content event_membres_details">
 
                                 <h2 class="bordered_title"> <?php echo $artist_name_minor; ?></h2>
@@ -247,26 +237,14 @@
 
 
 
-
-    <!-- <section class="section  image_section" style="background-image: url()">
-
-
-    <div class="ticket_section">
+<?php if (false): ?>
     <?php if(get_field('ticketing_link')){ ?>
-    <p class="yellow_p"><a target="_blank" href="<?php echo get_field('ticketing_link');?>"><i class="fa fa-ticket" aria-hidden="true"></i> Billetterie</a></p><br>
-<?php }  ?>
-<?php if(get_field('tarif_passe-partout_jcb')){ ?>
-<p><a target="_blank" href="https://etickets.infomaniak.com/shop/YwGYSsVfjX/"><i class="fa fa-key" aria-hidden="true"></i> Passe-Partout JCB</a></p>
-<?php } ?>
-</div>
-
-</section> -->
-
-
-
-
-
-
+        <p class="yellow_p"><a target="_blank" href="<?php echo get_field('ticketing_link');?>"><i class="fa fa-ticket" aria-hidden="true"></i> Billetterie</a></p><br>
+    <?php }  ?>
+    <?php if(get_field('tarif_passe-partout_jcb')){ ?>
+        <p><a target="_blank" href="https://etickets.infomaniak.com/shop/YwGYSsVfjX/"><i class="fa fa-key" aria-hidden="true"></i> Passe-Partout JCB</a></p>
+    <?php } ?>
+<?php endif; ?>
 
 
 </article>

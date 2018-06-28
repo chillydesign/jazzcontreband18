@@ -32,7 +32,7 @@
 <?php if($post_count >0) : ?>
 
 	<div class="black">
-	<div class="container-fluid">
+	<div class="container">
 	<h2 style="background: white; display: inline-block; padding: 0 20px; color: black; margin: 0 0 20px;">Au programme</h2><br><br>
 		<div class="row">
 

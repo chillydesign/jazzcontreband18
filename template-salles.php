@@ -20,7 +20,7 @@
 
 
 
-<div class="container-fluid section2col">
+<div class="container section2col">
 	<div class="row">
 		<div class="sectioncol col-sm-6 stripes colnmb1">
 			<div class="title">

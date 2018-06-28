@@ -2,18 +2,18 @@
 
 @import "variables";
 @import "reset";
-@import "bxslider";
-@import "header";
-// @import "patterns";
-// @import "sections";
-@import "calendar";
 
-
-@import "variables";
-@import "reset";
 @import "typography";
 @import "header";
 @import "footer";
+
+// @import "bxslider";
+// @import "patterns";
+// @import "sections";
+// @import "calendar";
+
+
+
 
 
 
@@ -57,12 +57,14 @@ body {
 }
 .column {
     flex: 1 auto 0;
+      width: 100%;
+      padding: 0 20px;
 
 
     &.big_column {
 
         @media (min-width: $mobile_width) {
-            width: 55%;
+            width: 60%;
         }
     }
 
@@ -132,10 +134,10 @@ section  {
 #about_jazzcontreband {
 
     position: relative;
-    top: -20px;
+    top: -50px;
 
     @media (min-width: $mobile_width) {
-        top: -150px;
+        top: -180px;
     }
 
     h2, h3 {
@@ -148,23 +150,27 @@ section  {
         border-top: 3px solid $yellow;
         padding: 30px 0;
         margin: 20px 0 30px;
+        .column {
+            width: auto;
+        }
     }
     .big_info {
         text-align: center;
         font-size: #{$font_size * 0.8};
         letter-spacing: 3px;
 
+
         @media (min-width: $mobile_width) {
             font-size: $font_size;
         }
         span {
-            font-size: 4em;
+            font-size: 5em;
             display: block;
             font-weight: bold;
             line-height: 0.9;
             letter-spacing: 0;
             @media (min-width: $mobile_width) {
-                font-size: 5em;
+                font-size: 4em;
             }
             @media (min-width: $tablet_width) {
                 font-size: 6em;
@@ -179,7 +185,7 @@ section  {
     z-index: 10;
 
     @media (min-width: $mobile_width) {
-        margin: -30px 0 0;
+        margin: -60px 0 0;
     }
 }
 
@@ -289,11 +295,19 @@ section  {
     top: -20px;
 
     @media (min-width: $mobile_width) {
-        top: -20px;
+        top: -50px;
     }
 }
 
 
+#minor_artist {
+    font-size: 80%;
+}
+
+
+#map_section {
+    margin: 0 0 30px;
+}
 
 
 /*MEMBERS MAP*/

@@ -1,13 +1,13 @@
 <?php //$image =  get_sub_field('one_third_image'); ?>
-<?php //$image_position = get_sub_field('image_position'); ?> 
+<?php //$image_position = get_sub_field('image_position'); ?>
 <?php $image_position = 'right'; ?>
-<?php  $classes = ($image_position == 'right') ?  [ 'col-sm-8 col-sm-text-right', 'col-sm-4' ]  :  [ 'col-sm-8 col-sm-push-4', 'col-sm-4 col-sm-pull-8' ]  ; ?> 
+<?php  $classes = ($image_position == 'right') ?  [ 'big_column', 'small_column' ]  :  [ 'small_column', 'big_column' ]  ; ?>
 
-<div class="container white">
-	<div class="row">
+<div class="container ">
+	<div class="column_container">
 
 
-		<div class="<?php echo $classes[0]; ?>">
+		<div class="column <?php echo $classes[0]; ?>">
 		<?php echo get_sub_field('big_col'); ?>
 		</div>
 
@@ -16,6 +16,6 @@
 		<?php echo get_sub_field('small_col'); ?>
 		</div>
 
-	</div> <!-- END OF ROW -->
+	</div> <!-- END OF COLUMN CONTAINER -->
 
 </div><!--  END OF CONTAINER -->

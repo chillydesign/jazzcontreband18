@@ -14,7 +14,7 @@
 			<?php $website_http = ( strpos($website, '//') > 0  ) ?  $website :  'https://' . $website   ; ?>
 
 			<section class="section  section_colonnes">
-				<div class="container-fluid section1col">
+				<div class="container section1col">
 					<div class="row">
 						<div class="sectioncol col-sm-12 white colnmb1">
 							<div class="content">

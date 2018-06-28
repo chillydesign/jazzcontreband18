@@ -3,6 +3,7 @@
 $tdu = get_template_directory_uri();
 $content =  get_sub_field('content');
 $numbers =  get_sub_field('numbers');
+$today = date("Ymd");
 $events = 	new WP_Query(array(
     'post_type' => 'evenement_festival',
     'posts_per_page' => 3,
@@ -26,7 +27,7 @@ $events = 	new WP_Query(array(
             <div class="column small_column">
                 <?php get_template_part( 'partials/logo' ); ?>
             </div>
-            <div class="column large_column">
+            <div class="column big_column" id="date_box_container">
                 <div id="date_box">1→28. <br> 10.2018</div>
             </div>
         </div>

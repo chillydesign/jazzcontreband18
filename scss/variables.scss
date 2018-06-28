@@ -33,10 +33,10 @@ $tablet_width: 992px;
 
 @keyframes unBlur {
     from {
-        filter: blur(100px)  ;
+        filter: grayscale(1) blur(100px)  ;
     }
     to {
-        filter: blur(0px)  ;
+        filter: grayscale(1) blur(0px)  ;
     }
 }
 

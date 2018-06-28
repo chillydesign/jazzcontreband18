@@ -153,10 +153,12 @@ h6 a, a h6 {
     color: white;
     margin-top: 10px;
     display: block;
+    text-align: center;
     cursor: pointer;
-    line-height: 1;
+    line-height: 1.1;
     @media (min-width: $mobile_width) {
         display: inline-block;
+    
     }
     &:link, &:active, &:visited {
         color:white;
@@ -165,4 +167,10 @@ h6 a, a h6 {
         color:white;
         background: darken($blue, 10);
     }
+}
+
+iframe {
+    width: 100%;
+
+    margin: 0 0 20px;
 }
