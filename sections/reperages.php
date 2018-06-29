@@ -16,18 +16,21 @@ $rc = ( isset($_GET['country'])) ? $_GET['country'] : false;
 				<aside class="black_box">
 					<form method="get" style="margin-bottom:30px;">
 					<label for="search_rep">
-						<h4>Rechercher</h4>
+						<h4> <i class="fa fa-search"></i> Rechercher</h4>
 					</label>
 					<input type="text" id="search_rep" name="search" value="<?php echo $rs; ?>" />
 					</form>
-
+                    <p>
 					<a href="?country=France" class="country_search">> France</a>
 					<a href="?country=Suisse" class="country_search">> Suisse</a>
 					<a href="?country=Franco-Suisse" class="country_search">> Franco-Suisse</a>
 					<a href="?#reperages">> Tous les repérages</a>
+                    </p>
 
 					<h4>Mes repérages</h4>
+                    <p>
 					<a href="?auteur=<?php echo get_current_user_id(); ?>#reperages">> Tous mes repérages</a>
+                    </p>
 					<h6><a href="<?php echo site_url('/reperage-admin')?>">Ajouter un repérage</a></h6>
 
 

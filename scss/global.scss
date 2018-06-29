@@ -105,6 +105,11 @@ body {
     a, a:hover, a:active, a:visited, a:link {
         color: white;
     }
+
+    h6 a, a h6 {
+        background: $yellow;
+        color: $black !important;
+    }
 }
 
 .green_box, .green_event {
@@ -150,6 +155,9 @@ body {
     hr {
         border-bottom-color: $black;
     }
+    h6 a, a h6 {
+        color: white !important;
+    }
 }
 
 
@@ -178,6 +186,9 @@ section  {
     }
 
     #big_infos {
+        .column {
+            padding: 0;
+        }
         flex-direction: row;
         border-bottom: 3px solid $yellow;
         border-top: 3px solid $yellow;
@@ -197,7 +208,7 @@ section  {
             font-size: $font_size;
         }
         span {
-            font-size: 5em;
+            font-size: 4.5em;
             display: block;
             font-weight: bold;
             line-height: 0.9;
@@ -307,8 +318,8 @@ section  {
         text-transform: uppercase;
     }
 
-    &.upcoming_event_blue { color: $blue; }
-    &.upcoming_event_green { color: $green; }
+    // &.upcoming_event_blue { color: $blue; }
+    // &.upcoming_event_green { color: $green; }
 }
 
 
@@ -520,8 +531,8 @@ ul#events {
         .links {
             a {
                 font-size: 1.8em;
-                background: black;
-                color: white;
+                background: transparentize(white, 0.2);
+                color: $black;
                 display: inline-block;
                 padding: 7px;
                 border-radius: 7px;

@@ -82,6 +82,7 @@ nav {
             a {
                 display: block;
                 padding: 15px 25px;
+                text-decoration: none;
 
 
                 @media (min-width: $mobile_width) {
@@ -103,8 +104,40 @@ nav {
 
             } // end of ul li a
 
+            &:hover {
+                ul {
+                    display: block;
+                }
+            }
+
             ul {
-                display: none;
+
+                li {
+                    font-size: 1em;
+                    padding-left: 20px;
+                }
+
+                @media (min-width: $mobile_width) {
+                    position: absolute;
+                    top: 99%;
+                    width: 200px;
+                    display: none;
+                    text-align: left;
+
+                    li {
+                        display: block;
+                        padding: 0;
+                        a {
+                            display: block;
+                            background: $yellow;
+                            font-size: 90%;
+                            padding: 10px;
+                            &:hover {
+                                background: darken($yellow, 10);
+                            }
+                        }
+                    }
+                }
             } // end of ul li ul
 
         }
@@ -271,13 +304,15 @@ header {
             z-index: 0;
             width: 100%;
             height: 100%;
-            background: no-repeat top center;
+            background: no-repeat center center;
             background-size: cover;
             opacity: 0.4;
             filter: grayscale(1) blur(100px)  ;
             animation: unBlur 5s forwards;
-            .event_bg {
-                opacity: 0.8
+            &.event_bg {
+                opacity: 0.6;
+                // animation: none;
+                // filter: none;
             }
         }
 
