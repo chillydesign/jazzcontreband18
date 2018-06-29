@@ -41,6 +41,13 @@ $tablet_width: 992px;
 }
 
 
+@keyframes spin {
+  from  {  transform: rotate(0deg) }
+  to    {  transform: rotate(360deg)}
+
+}
+
+
 
 @mixin linear-gradient($direction, $color-stops...) {
   background: nth(nth($color-stops, 1), 1);

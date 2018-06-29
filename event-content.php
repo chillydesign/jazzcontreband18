@@ -1,5 +1,6 @@
 
 <!-- SHARED TEMPLATE BEWEEN FESTIVAL AND SAISON EVENEMENTS -->
+<?php global $image; global $has_image; ?>
 <?php $ticketing_link = get_field('ticketing_link'); ?>
 <?php $practical_info = get_field('information'); ?>
 <?php $dates = get_field('dates'); ?>
@@ -15,24 +16,9 @@
 <?php $website = get_field('website'); ?>
 <?php $countries = get_field('countries'); ?>
 <?php $artist_name_minor = get_field('artist_name_minor'); ?>
-
 <?php $id = get_the_ID(); ?>
-<?php $has_image =  has_post_thumbnail(); ?>
-<?php $image = ($has_image)  ?  get_the_post_thumbnail_url() :  get_template_directory_uri() . '/img/placeholder.jpg'; ?>
 
-<header>
-    <div class="container">
-        <div class="column_container">
-            <div class="column small_column">
-                <?php get_template_part( 'partials/logo' ); ?>
-            </div>
-            <div class="column big_column">
-            </div>
-        </div>
-    </div>
-    <div id="header_background" class="event_bg" style="background-image:url('<?php echo $image; ?>"></div>
-</header>
-
+<?php get_template_part( 'partials/page-header' ); ?>
 <!-- article -->
 <article  <?php post_class(); ?>>
 

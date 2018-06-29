@@ -4,6 +4,8 @@
 
 <?php if (have_posts()): while (have_posts()) : the_post(); ?>
 
+    <?php $has_image =  has_post_thumbnail(); ?>
+    <?php $image = ($has_image)  ?  get_the_post_thumbnail_url() :  false; ?>
     <?php get_template_part('event-content'); ?>
 
 

@@ -1,13 +1,11 @@
 <?php /* Template Name: Salles */ get_header(); ?>
 
 
-		<!-- section -->
-		<section>
-
-
 
 
 		<?php if (have_posts()): while (have_posts()) : the_post(); ?>
+
+            <?php get_template_part( 'partials/page-header' ); ?>
 
 			<!-- article -->
 			<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
@@ -84,8 +82,6 @@
 
 		<?php endif; ?>
 
-		</section>
-		<!-- /section -->
 
 
 

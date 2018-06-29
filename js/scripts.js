@@ -1,10 +1,16 @@
-// import moment from '../node_modules/moment/moment.js';
+import moment from 'moment';
+// import * as _ from 'underscore';
+import clndr from 'clndr';
 
 (function ($, root, undefined) {
 
 	$(function () {
 
 		'use strict';
+
+
+
+        french_moment();
 
 
 		var $menu_navigation = $('#menu_navigation');
@@ -99,6 +105,84 @@
 
 
 
+
+        // CLNDR
+        // CLNDR
+        // CLNDR
+        if (typeof calendar_api_url != 'undefined'){
+
+
+
+            var $events_container = $('#events_container');
+            var $show_all_events = $('#show_all_events');
+            var $events_template = $('#events_template').html();
+
+
+
+
+            var $calendar_template = $('#calendar_template').html();
+            var $events_calendar = $('#events_calendar');
+            var $events_title = $('#events_title');
+
+
+            $.ajax({
+                url: calendar_api_url
+            }).done(function( data ) {
+
+                // ORIGINAL SET OF EVENTS
+                var events = processEvents(data);
+                var original_events = events;
+
+                var compiled =  _.template($events_template);
+
+
+                displayEvents(events, $events_container, compiled)
+
+                var cal1 = $events_calendar.clndr({
+                    template: $calendar_template,
+                    forceSixRows: true,
+                    events: data,
+                    startWithMonth: "2018-10-01",
+                    // constraints: {
+                    // 		startDate: '2017-12-22',
+                    // 		endDate: '2018-01-09'
+                    // },
+                    multiDayEvents: {
+                        singleDay: 'date',
+                        endDate: 'endDate',
+                        startDate: 'startDate'
+                    },
+                    clickEvents: {
+                        click: function (target) {
+                            var target_date = target.date._i;
+                            var processed_events = processEvents(original_events, target_date);
+                            displayEvents(processed_events, $events_container, compiled);
+
+                            $events_title.html(target_date);
+
+                            $show_all_events.show();
+                        }
+
+                    }
+                });
+
+                $show_all_events.on('click', function(e){
+                    e.preventDefault();
+                    displayEvents(original_events, $events_container, compiled);
+                    $show_all_events.hide();
+                    $events_title.html( $events_title.data('title')   );
+
+                })
+
+            });
+
+        }
+        // END OF CLNDR
+        // END OF CLNDR
+        // END OF CLNDR
+
+
+
 	});
 
 })(jQuery, this);
@@ -145,3 +229,134 @@ function addPointToMap(map,  location, bounds, infowindow, markers ) {
 	}
 
 };
+
+
+
+function french_moment(){
+	moment.locale('fr', {
+    months : 'janvier_février_mars_avril_mai_juin_juillet_août_septembre_octobre_novembre_décembre'.split('_'),
+    monthsShort : 'jan._fév._mar_avr._mai_jun_jul._aoû_sep._oct._nov._déc.'.split('_'),
+    monthsParseExact : true,
+    weekdays : 'dimanche_lundi_mardi_mercredi_jeudi_vendredi_samedi'.split('_'),
+    weekdaysShort : 'dim._lun._mar._mer._jeu._ven._sam.'.split('_'),
+    weekdaysMin : 'Di_Lu_Ma_Me_Je_Ve_Sa'.split('_'),
+    weekdaysParseExact : true,
+    longDateFormat : {
+        LT : 'HH:mm',
+        LTS : 'HH:mm:ss',
+        L : 'DD/MM/YYYY',
+        LL : 'D MMMM YYYY',
+        LLL : 'D MMMM YYYY HH:mm',
+        LLLL : 'dddd D MMMM YYYY HH:mm'
+    },
+    calendar : {
+        sameDay : '[Aujourd’hui à] LT',
+        nextDay : '[Demain à] LT',
+        nextWeek : 'dddd [à] LT',
+        lastDay : '[Hier à] LT',
+        lastWeek : 'dddd [dernier à] LT',
+        sameElse : 'L'
+    },
+    relativeTime : {
+        future : 'dans %s',
+        past : 'il y a %s',
+        s : 'quelques secondes',
+        m : 'une minute',
+        mm : '%d minutes',
+        h : 'une heure',
+        hh : '%d heures',
+        d : 'un jour',
+        dd : '%d jours',
+        M : 'un mois',
+        MM : '%d mois',
+        y : 'un an',
+        yy : '%d ans'
+    },
+    dayOfMonthOrdinalParse : /\d{1,2}(er|e)/,
+    ordinal : function (number) {
+        return number + (number === 1 ? 'er' : 'e');
+    },
+    meridiemParse : /PD|MD/,
+    isPM : function (input) {
+        return input.charAt(0) === 'M';
+    },
+    // In case the meridiem units are not separated around 12, then implement
+    // this function (look at locale/id.js for an example).
+    // meridiemHour : function (hour, meridiem) {
+    //     return /* 0-23 hour, given meridiem token and hour 1-12 */ ;
+    // },
+    meridiem : function (hours, minutes, isLower) {
+        return hours < 12 ? 'PD' : 'MD';
+    },
+    week : {
+        dow : 1, // Monday is the first day of the week.
+        doy : 4  // The week that contains Jan 4th is the first week of the year.
+    }
+});
+}
+
+
+
+
+
+function displayEvents(events, events_container, compiled){
+
+
+	var $s_events =  processEvents(events);
+
+	events_container.html(  compiled({ events:   $s_events  })  );
+
+
+	jQuery('#back_to_top').on('click', function(e){
+		e.preventDefault();
+		jQuery("html, body").animate({ scrollTop: 0 }, 500);
+	});
+
+
+}
+
+
+function processEvents(events, date){
+
+		if (date && date != '' ){
+			var events = _.filter(  events ,  function(e) {
+
+				if ( Array.isArray(e.date)) {
+					 return  e.date.indexOf( date ) > -1  ;
+				} else {
+					return  e.date == date ;
+				}
+			});
+		}
+
+
+	var sorted_events = _.sortBy(events, function(e) { return e.searchDate; });
+	var events_array =  _.toArray(sorted_events) ;
+
+
+	var $prev_date = false;
+		// PROCESS ARRAY
+		for (var i = 0; i < events_array.length ; i++) {
+			var event = events_array[i];
+
+				if (typeof event['startDate'] != 'undefined' ) {
+					event['nice_date']   =   moment(event['startDate']).format("dddd D ") + ' - ' + moment(event['endDate']).format("dddd D MMMM ");
+				} else {
+					event['nice_date']   = moment(event['date']).format("dddd D MMMM ");
+				}
+
+				if(event['nice_date'] != $prev_date) {
+					$prev_date = event['nice_date'];
+					event['date_title'] =  event['nice_date'];
+				} else {
+					event['date_title'] = false;
+				}
+
+if(!event['thumbnail']){
+	event['thumbnail'] = "https://jazzcontreband.com/wp-content/themes/jazzcontreband/img/placeholder.jpg";
+}
+
+		};
+
+	return events_array;
+}
