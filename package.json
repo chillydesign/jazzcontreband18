@@ -22,14 +22,7 @@
     "url": "https://github.com/chillydesign/jazzcontreband18/issues"
   },
   "homepage": "https://github.com/chillydesign/jazzcontreband18#readme",
-  "dependencies": {
-    "bxslider": "^4.2.13",
-    "clndr": "^1.4.7",
-    "jquery": "^3.3.1",
-    "moment": "^2.22.2",
-    "tiny-slider": "^2.7.3",
-    "underscore": "^1.9.1"
-  },
+  "dependencies": {},
   "devDependencies": {
     "gulp": "^3.9.1",
     "gulp-autoprefixer": "^4.0.0",

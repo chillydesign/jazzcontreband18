@@ -1,6 +1,6 @@
-import moment from 'moment';
-// import * as _ from 'underscore';
-import clndr from 'clndr';
+// import moment from 'moment';
+// // import * as _ from 'underscore';
+// import clndr from 'clndr';
 
 (function ($, root, undefined) {
 
@@ -34,6 +34,18 @@ import clndr from 'clndr';
 		})
 
 
+
+        $(".img_gallery").justifiedGallery({
+			 rowHeight : 150,
+			 margins: 4,
+			 lastRow : 'justify'
+		}).on('jg.complete', function () {
+			$('a.gallery').featherlightGallery({
+				previousIcon: '<',
+				nextIcon: '>'
+			});
+
+		});
 
 
 

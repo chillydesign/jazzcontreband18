@@ -6,11 +6,11 @@ module.exports = {
     alias: {}
   },
   plugins: [
-       new webpack.ProvidePlugin({
-           $: "jquery",
-           jQuery: "jquery",
-           "window.jQuery": "jquery"
-       })
+       // new webpack.ProvidePlugin({
+       //     $: "jquery",
+       //     jQuery: "jquery",
+       //     "window.jQuery": "jquery"
+       // })
    ],
   entry: {
     scripts:  './scripts.js',
