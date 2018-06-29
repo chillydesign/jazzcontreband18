@@ -37,6 +37,7 @@
 				  echo '</div></a>';
 				 $i++;
 				endwhile;
+                wp_reset_postdata();
 
 			?>
 
@@ -60,6 +61,7 @@
 				  echo '</div></a>';
 				 $i++;
 				endwhile;
+                wp_reset_postdata();
 
 			?>
 

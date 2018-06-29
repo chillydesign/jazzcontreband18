@@ -3,6 +3,7 @@
 $tdu = get_template_directory_uri();
 $content =  get_sub_field('content');
 $numbers =  get_sub_field('numbers');
+
 $today = date("Ymd");
 $events = 	new WP_Query(array(
     'post_type' => 'evenement_festival',
@@ -45,7 +46,7 @@ $events = 	new WP_Query(array(
         <div id="about_jazzcontreband" class=" column big_column ">
             <div class="green_box">
 
-
+                <?php if ($numbers): ?>
                 <div class="column_container" id="big_infos">
                     <?php foreach ($numbers as $number) : ?>
                         <div class="column">
@@ -56,6 +57,7 @@ $events = 	new WP_Query(array(
                         </div>
                     <?php endforeach; ?>
                 </div>
+            <?php endif;  // end if numbers ?>
 
 
                 <?php echo $content; ?>
@@ -84,7 +86,7 @@ $events = 	new WP_Query(array(
                         <p>Location</p>
                     </div>
 
-                <?php endwhile; ?>
+                <?php endwhile; wp_reset_postdata(); ?>
 
 
             </div>
