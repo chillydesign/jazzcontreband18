@@ -2,7 +2,7 @@
 
 <?php if ($images) : ?>
 
-
+<div class="container">
 	<br>
 	<div class="img_gallery ">
 		<?php foreach($images as $image): ?>
@@ -13,3 +13,5 @@
 	<br>
 <?php endif; ?>
 <div class="clear"></div>
+
+</div>

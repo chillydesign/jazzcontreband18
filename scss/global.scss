@@ -10,7 +10,7 @@
 // @import "bxslider";
 // @import "patterns";
 
- @import "calendar";
+@import "calendar";
 
 
 
@@ -57,8 +57,8 @@ body {
 }
 .column {
     flex: 1 auto 0;
-      width: 100%;
-      padding: 0 20px;
+    width: 100%;
+    padding: 0 20px;
 
 
     &.big_column {
@@ -317,9 +317,22 @@ section  {
     position: relative;
     top: -20px;
 
-
     @media (min-width: $mobile_width) {
         top: -300px;
+    }
+
+    .event_styles {
+        margin: 0 -10px ;
+        padding: 0 0 10px;
+    }
+    .event_meta {
+        display: inline-block;
+        padding: 0 10px;
+        border-right: 2px solid transparentize(white,0.5);
+
+        &:last-child {
+            border-right: 0;
+        }
     }
 }
 
@@ -366,33 +379,33 @@ section  {
 
 
 .loading {
-	animation: spin 1s linear infinite;
-	width:20px;
-	display: inline-block;
-	height: 20px;
-	border:3px solid $primary-color;
-	border-radius: 7px;
-	position: relative;
-	text-align: center;
-	margin: auto;
-	overflow: hidden;
+    animation: spin 1s linear infinite;
+    width:20px;
+    display: inline-block;
+    height: 20px;
+    border:3px solid $primary-color;
+    border-radius: 7px;
+    position: relative;
+    text-align: center;
+    margin: auto;
+    overflow: hidden;
 
-	&:after, &:before {
-		@extend .loading;
-		content:'';
-		opacity: 0.6;
-		position:absolute;
-		top:5px;
-		left: 5px;
-		width: 14px;
-		height: 14px;
-	}
-	&:before {
-		bottom:5px;
-		top:auto;
-		left:auto;
-		right:5px;
-	}
+    &:after, &:before {
+        @extend .loading;
+        content:'';
+        opacity: 0.6;
+        position:absolute;
+        top:5px;
+        left: 5px;
+        width: 14px;
+        height: 14px;
+    }
+    &:before {
+        bottom:5px;
+        top:auto;
+        left:auto;
+        right:5px;
+    }
 }
 
 
@@ -429,8 +442,8 @@ ul#events {
 
 #programme_container {
 
-        #calendar_box {
-            text-align: center;
+    #calendar_box {
+        text-align: center;
         padding: 20px;
     }
 }
@@ -451,4 +464,92 @@ ul#events {
             padding: 20px;
         }
     }
+}
+
+
+
+#reperages {
+    #reperages_container {
+
+        .column {
+            padding: 0;
+            width: auto;
+
+        }
+        .info-group {
+
+            padding-bottom: 10px;
+            span {
+                margin-right: 5px;
+            }
+            span:before {
+                content: '|';
+                display: inline-block;
+                margin-right: 5px;
+            }
+            span:first-child:before {
+                display: none;
+            }
+        }
+
+        .contact {
+
+            span {
+                margin-right: 10px;
+                display: inline-block;
+                i {
+                    margin-right: 3px;
+                }
+            }
+        	.adresse {
+        		display: block;
+        		 p{
+        			font-size: 1em;
+        			display: inline-block;
+        			padding-bottom: 0;
+        		}
+
+        		i {
+        			vertical-align: top;
+        			top: 5px;
+        			position: relative;
+        		}
+        	}
+        }
+
+        .links {
+            a {
+                font-size: 1.8em;
+                background: black;
+                color: white;
+                display: inline-block;
+                padding: 7px;
+                border-radius: 7px;
+                vertical-align: top;
+                font-weight: bold;
+            }
+        }
+        h3 {
+            font-size: 2em;
+        }
+        p {
+            padding: 0 0 5px;
+            font-size: 1.3em;
+        }
+    }
+
+    aside a {
+        display: block;
+    }
+}
+
+.reperage_box {
+    font-size: 1em;
+}
+
+
+
+.event_thumb {
+    background: no-repeat center center;
+    background-size: cover;
 }

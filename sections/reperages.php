@@ -9,11 +9,11 @@ $rc = ( isset($_GET['country'])) ? $_GET['country'] : false;
 <div class="white" id="reperages">
 	<div class="container">
 		<h2 style="text-align:center; margin-bottom:50px">Repérages</h2>
-		<div class="column_container">
+		<div class="column_container column_container_reversed">
 
 			<div class="column small_column">
 
-				<aside>
+				<aside class="black_box">
 					<form method="get" style="margin-bottom:30px;">
 					<label for="search_rep">
 						<h4>Rechercher</h4>
@@ -35,7 +35,7 @@ $rc = ( isset($_GET['country'])) ? $_GET['country'] : false;
 
 
 			</div>
-			<div class="column big_column ">
+			<div class="column big_column " id="reperages_container">
 				<?php
 
 			if (isset($rs) && $rs != '' ):

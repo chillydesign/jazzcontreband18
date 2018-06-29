@@ -34,8 +34,9 @@
                         <?php endif; ?>
                     </h1>
 
-                    <?php if( $styles) : ?>
-                        <p class="event_styles">
+                    <p class="event_styles">
+                        <span class="event_meta">
+                        <?php if( $styles) : ?>
                             <?php $i = 1;
                             foreach( $styles as $style ):
                                 if ($i == 1) {
@@ -46,34 +47,31 @@
                                 echo $style;
                                 $i++;
                             endforeach; ?>
-                        </p><br>
-                    <?php endif; // end of if $styles ?>
-
+                            </span>
+                            <?php if( $countries) : ?>
+                                <span class="event_meta"> <i class="fa fa-globe" aria-hidden="true"></i>
+                                    <?php echo $countries; ?> </span>
+                            <?php endif; // end of countries ?>
+                        <?php endif; // end of if $styles ?>
+                    </p>
 
                     <?php if(have_rows('dates', $id)) : ?>
-                        <p class="event_info">
+                        <p class="event_styles">
                             <?php $numrows = count( $dates );?>
-                            <?php if($numrows != 0){?><span><i class="fa fa-calendar" aria-hidden="true"></i> <?php } ?>
+                            <?php if($numrows != 0){?><span class="event_meta"><i class="fa fa-calendar" aria-hidden="true"></i> <?php } ?>
                                 <?php echo nice_event_dates( $dates   ); ?>
-                            </span> |
+                            </span>
                             <?php if ( $time ) :?>
-                                <span><i class="fa fa-clock-o" aria-hidden="true"></i> <?php echo $time; ?></span> |
+                                <span class="event_meta"><i class="fa fa-clock-o" aria-hidden="true"></i> <?php echo $time; ?></span>
                             <?php endif; // end of if $time ?>
                             <?php if (!empty($members)) : ?>
-                                <span><i class="fa fa-map-marker" aria-hidden="true"></i> <?php echo $members->post_title; ?> - <?php echo get_field('ville', $members->ID); ?></span>
+                                <span class="event_meta"><i class="fa fa-map-marker" aria-hidden="true"></i> <?php echo $members->post_title; ?> - <?php echo get_field('ville', $members->ID); ?></span>
                             <?php endif; // end of if members ?>
                         </p>
                     <?php endif; // end of if dates ?>
 
 
-                    <?php if( $countries) : ?>
-                        <p class="event_countries">
-                            <i class="fa fa-globe" aria-hidden="true"></i>
-                            <?php echo $countries; ?>
-                        </p>
-                    <?php endif; // end of countries ?>
-
-
+                    <br><br>
                     <?php echo $description; ?>
 
                     <?php if( $lineup): ?>
