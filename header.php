@@ -29,7 +29,7 @@
 		<meta name="msapplication-TileColor" content="#ffffff">
 		<meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
 		<meta name="theme-color" content="#ffffff">
-
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
 		<?php wp_head(); ?>
 
 
@@ -52,7 +52,7 @@
                     </ul>
                 </div>
             </nav>
-    
+
 
 
 
