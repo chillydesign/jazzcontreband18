@@ -18,7 +18,7 @@
 					<div class="column small_column ">
 						<div class="event_image" style="background-image:url('<%= event.thumbnail %>');"></div>
 					</div>
-					<div class="column large_column ">
+					<div class="column big_column ">
 						<div class="prog_evnt_details">
                             <h3><%= event.post_title %></h3>
 							<% if(event.nice_date){  %><p><i class="fa fa-calendar" aria-hidden="true"></i>  <%= event.nice_date %></p><% } %>

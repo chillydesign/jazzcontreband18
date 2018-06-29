@@ -2,13 +2,13 @@
 
 
 <div class="container press">
-<div class="row">
+<div class="column_container">
     <?php  $count = 0; ?>
 <?php while(have_rows('press')): the_row() ;  ?>
     <?php $title =  get_sub_field('title'); ?>
     <?php $image =  get_sub_field('image'); ?>
     <?php $content =  get_sub_field('content'); ?>
-    <div class="col-sm-4">
+    <div class="column">
     <div class=" reperage_box stripes upcoming">
       <div class="white">
         <div class="event_thumb" style="padding:30%; background-image:url(<?php echo $image['sizes']['small'] ; ?>);">
@@ -20,7 +20,7 @@
         </div>
       </div>
     </div>
-  <?php  if($count % 3 == 2) echo '</div> <!-- END OF ROW --> <div class="row">' ; ?>
+  <?php  if($count % 3 == 2) echo '</div> <!-- END OF COLUMNCONTAINER --> <div class="column_container">' ; ?>
 <?php $count++; ?>
 <?php endwhile; ?>
 </div><!-- END OF ROW -->

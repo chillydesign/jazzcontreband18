@@ -9,7 +9,7 @@
 
         <div class="column_container">
 
-            <div class="column large_column">
+            <div class="column big_column">
                 <div id="events_container">
                     <span class="loading"></span>
                 </div>

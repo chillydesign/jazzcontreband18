@@ -2,12 +2,12 @@
 
 
 <div class="container">
-<div class="row">
+<div class="column_container">
     <?php  $count = 0; ?>
 <?php while(have_rows('galleries')): the_row() ;  ?>
     <?php $page =  get_sub_field('link'); ?>
     <?php $image =  get_sub_field('image'); ?>
-    <div class="col-sm-4">
+    <div class="column">
     <a href="<?php echo $page->guid; ?>">
     <div class=" reperage_box stripes upcoming">
       <div class="white">
@@ -19,7 +19,7 @@
     </div>
   </a>
   </div>
-  <?php  if($count % 3 == 2) echo '</div> <!-- END OF ROW --> <div class="row">' ; ?>
+  <?php  if($count % 3 == 2) echo '</div> <!-- END OF ROW --> <div class="column_container">' ; ?>
 <?php $count++; ?>
 <?php endwhile; ?>
 </div><!-- END OF ROW -->

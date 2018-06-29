@@ -30,7 +30,7 @@ $loop = new WP_Query( $args );
 <div id="upcoming_events">
 
     <div class="column_container">
-        <?php $color_classes = ['yellow_event', 'black_event', 'blue_event']; ?>
+        <?php $color_classes = [ 'green_event', 'yellow_event', 'blue_event' ]; ?>
         <?php $o = 0;	while ( $loop->have_posts() ) : $loop->the_post(); ?>
             <div class="column upcoming_event_column <?php echo $color_classes[$o]; $o++ ?> ">
                     <a href="<?php the_permalink(); ?>">

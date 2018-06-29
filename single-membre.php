@@ -4,6 +4,8 @@
 
 	<?php if (have_posts()): while (have_posts()) : the_post(); ?>
 
+        <?php get_template_part( 'partials/page-header' ); ?>
+
 		<!-- article -->
 		<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 			<?php $phone = get_field('phone'); ?>
@@ -14,9 +16,9 @@
 			<?php $website_http = ( strpos($website, '//') > 0  ) ?  $website :  'https://' . $website   ; ?>
 
 			<section class="section  section_colonnes">
-				<div class="container section1col">
-					<div class="row">
-						<div class="sectioncol col-sm-12 white colnmb1">
+				<div class="container ">
+					<div class="column_container">
+						<div class="column">
 							<div class="content">
 								<h1 style="text-align: center;"><?php the_title(); ?></h1>
 								<br>
@@ -36,8 +38,8 @@
 
 
 <div class="container section2col">
-	<div class="row">
-		<div class="sectioncol col-sm-6 stripes colnmb1 nexttomap" style="height: 1049px;">
+	<div class="column_container">
+		<div class="column small_column" >
 		<div class="title">
 			<h2><strong>Contact</strong></h2>
 		</div>
@@ -60,8 +62,11 @@
 
 			</div>
 		</div>
-		<div class="sectioncol col-sm-6 colnmb2 map_half_section">
-			<?php echo do_shortcode('[jazz_membres_map]'); ?>
+		<div class="column big_column">
+            <div id="map_section">
+                			<?php echo do_shortcode('[jazz_membres_map]'); ?>
+            </div>
+
 		</div>
 	</div> <!-- END OF ROW -->
 

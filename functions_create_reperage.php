@@ -59,7 +59,7 @@ function reperage_form_shortcode($atts , $content = null) {
 
   // MESSAGE TO SAY DELETE WAS SUCCESFUL
   if (isset($_GET['problem'])) {
-    $rp_frm .= '<div class="container"> <div class="col-sm-12 black" style="padding: 25px 35px 25px;     text-align: center;     margin-bottom: 30px;">';
+    $rp_frm .= '<div class="container"> <div class=" black" style="padding: 25px 35px 25px;     text-align: center;     margin-bottom: 30px;">';
     $rp_frm .= ' <p>Une erreur s’est produite en enregistrant ce repérage. Veuillez réessayer. </p>';
     $rp_frm .= '</div></div>';
   };
@@ -77,14 +77,14 @@ function reperage_form_shortcode($atts , $content = null) {
 
   // MESSAGE TO SAY DELETE WAS SUCCESFUL
   if (isset($_GET['supprime'])) {
-    $rp_frm .= '<div class="container"> <div class="col-sm-12 black" style="padding: 25px 35px 25px;     text-align: center;     margin-bottom: 30px;">';
+    $rp_frm .= '<div class="container"> <div class=" black" style="padding: 25px 35px 25px;     text-align: center;     margin-bottom: 30px;">';
     $rp_frm .= ' <h2>Le repérage a bien été supprimé</h2>';
     $rp_frm .= '</div></div>';
   };
 
 
   if ($reperage) {
-    $rp_frm .= '<div class="container"> <div class="col-sm-12 black" style="padding: 25px 35px 25px;     text-align: center;     margin-bottom: 30px;">';
+    $rp_frm .= '<div class="container"> <div class=" black" style="padding: 25px 35px 25px;     text-align: center;     margin-bottom: 30px;">';
     $rp_frm .= ' <h2>Modifier le repérage: <strong>' .  $reperage->post_title   .'</strong></h2>';
     $rp_frm .= '</div></div>';
   }
@@ -97,15 +97,15 @@ function reperage_form_shortcode($atts , $content = null) {
 
 $rp_frm .= '<div class="container ">';
   $rp_frm .= '<div class="reperage_box stripes">';
-  $rp_frm .= '<div class="row white">';
+  $rp_frm .= '<div class="column_container">';
   $rp_frm .= '<h3 style="padding-left:15px;"><i class="fa fa-info" aria-hidden="true"></i> Informations Générales</h3>';
 
-    $rp_frm .= '<div class="col-sm-8">';
+    $rp_frm .= '<div class="column big_column">';
       $rp_frm .=  make_reperage_field('formation_artiste', 'Formation - Artiste',  $reperage_id, 'input');
       $rp_frm .=  make_reperage_field('commentaires', 'Description',  $reperage_id, 'textarea');
     $rp_frm .= '</div>';
 
-    $rp_frm .= '<div class="col-sm-4">';
+    $rp_frm .= '<div class="column small_column">';
       $rp_frm .=  make_reperage_field('style', 'Style de musique',  $reperage_id, 'input');
       $rp_frm .=  make_reperage_field('origine', 'Origine',  $reperage_id, 'input');
       $rp_frm .=  make_reperage_field('numbre', 'Nombre de musiciens',  $reperage_id, 'input');
@@ -116,16 +116,16 @@ $rp_frm .= '<div class="container ">';
   $rp_frm .= '</div>';
 
   $rp_frm .= '<div class="reperage_box stripes">';
-  $rp_frm .= '<div class="row white">';
+  $rp_frm .= '<div class="column_container">';
   $rp_frm .= '<h3 style="padding-left:15px;"><i class="fa fa-link" aria-hidden="true"></i> Sites web</h3>';
 
-    $rp_frm .= '<div class="col-sm-4">';
+    $rp_frm .= '<div class="column">';
       $rp_frm .=  make_reperage_field('lien_1', 'Lien (site web, youtube ou autre)',  $reperage_id, 'input');
     $rp_frm .= '</div>';
-    $rp_frm .= '<div class="col-sm-4">';
+    $rp_frm .= '<div class="column">';
       $rp_frm .=  make_reperage_field('lien_2', 'Lien 2',  $reperage_id, 'input');
       $rp_frm .= '</div>';
-    $rp_frm .= '<div class="col-sm-4">';
+    $rp_frm .= '<div class="column">';
       $rp_frm .=  make_reperage_field('lien_3', 'Lien 3',  $reperage_id, 'input');
     $rp_frm .= '</div>';
 
@@ -133,29 +133,30 @@ $rp_frm .= '<div class="container ">';
   $rp_frm .= '</div>';
 
   $rp_frm .= '<div class="reperage_box stripes">';
-  $rp_frm .= '<div class="row white">';
+
   $rp_frm .= '<h3 style="padding-left:15px;"><i class="fa fa-user" aria-hidden="true"></i> Contact</h3>';
 
-    $rp_frm .= '<div class="col-sm-12">';
-      $rp_frm .=  make_reperage_field('contact', 'Personne de contact',  $reperage_id, 'input');
-    $rp_frm .= '</div>';
-
-    $rp_frm .= '<div class="col-sm-6">';
-      $rp_frm .=  make_reperage_field('tel_1', 'Téléphone 1',  $reperage_id, 'input');
-    $rp_frm .= '</div>';
-    $rp_frm .= '<div class="col-sm-6">';
-      $rp_frm .=  make_reperage_field('tel_2', 'Téléphone 2',  $reperage_id, 'input');
-    $rp_frm .= '</div>';
-
-
-    $rp_frm .= '<div class="col-sm-6">';
-      $rp_frm .=  make_reperage_field('email', 'Email',  $reperage_id, 'input');
-    $rp_frm .= '</div>';
-    $rp_frm .= '<div class="col-sm-6">';
-      $rp_frm .=  make_reperage_field('adresse', 'Adresse',  $reperage_id, 'input');
-    $rp_frm .= '</div>';
-
+  $rp_frm .= '<div >';
+  $rp_frm .=  make_reperage_field('contact', 'Personne de contact',  $reperage_id, 'input');
   $rp_frm .= '</div>';
+  $rp_frm .= '<div class="column_container">';
+  $rp_frm .= '<div class="column">';
+  $rp_frm .=  make_reperage_field('tel_1', 'Téléphone 1',  $reperage_id, 'input');
+  $rp_frm .= '</div>';
+  $rp_frm .= '<div class="column">';
+  $rp_frm .=  make_reperage_field('tel_2', 'Téléphone 2',  $reperage_id, 'input');
+  $rp_frm .= '</div>';
+  $rp_frm .= '</div>';
+  $rp_frm .= '<div class="column_container">';
+  $rp_frm .= '<div class="column">';
+  $rp_frm .=  make_reperage_field('email', 'Email',  $reperage_id, 'input');
+  $rp_frm .= '</div>';
+  $rp_frm .= '<div class="column">';
+  $rp_frm .=  make_reperage_field('adresse', 'Adresse',  $reperage_id, 'input');
+  $rp_frm .= '</div>';
+  $rp_frm .= '</div>';
+
+
 $rp_frm .= '</div>';
 
   // foreach ($fields as $field => $translation) :
@@ -176,10 +177,10 @@ $rp_frm .= '</div>';
 
 
 
-  $rp_frm .= '<div class="row"><div class="col-sm-9"><input type="submit" id="submit_course_form" value="Envoyer"></div>';
+  $rp_frm .= '<div class="column_container"><div class="column big_column"><input type="submit" id="submit_course_form" value="Envoyer"></div>';
 
     if ($reperage) :
-      $rp_frm .= '<div class="col-sm-3"><a href="?reperage_id='. $reperage_id .'&delete_reperage=true" class="delete_reperage">Supprimer</a></div>';
+      $rp_frm .= '<div class="column small_column"><a href="?reperage_id='. $reperage_id .'&delete_reperage=true" class="delete_reperage">Supprimer</a></div>';
   endif;
 
     $rp_frm .= '</div></form>';

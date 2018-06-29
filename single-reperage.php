@@ -18,8 +18,8 @@
 			<?php $owner = get_userdata( $post->post_author ); ?>
 
 
-			<div class="row">
-				<div class="col-sm-8">
+			<div class="column_container">
+				<div class="column big_column">
 					<h1> <?php the_title(); ?></h1>
 					<dl>
 
@@ -52,7 +52,7 @@
 					<?php // acf_form(); ?>
 
 				</div>
-				<div class="col-sm-4">
+				<div class="column small_column">
 
 					<?php if ( has_post_thumbnail()) : // Check if Thumbnail exists ?>
 						<div class="member_image">

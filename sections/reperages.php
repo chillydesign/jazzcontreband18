@@ -8,9 +8,10 @@ $rc = ( isset($_GET['country'])) ? $_GET['country'] : false;
 
 <div class="white" id="reperages">
 	<div class="container">
-		<div class="row">
 		<h2 style="text-align:center; margin-bottom:50px">Repérages</h2>
-			<div class="col-sm-4 col-sm-push-8">
+		<div class="column_container">
+
+			<div class="column small_column">
 
 				<aside>
 					<form method="get" style="margin-bottom:30px;">
@@ -34,7 +35,7 @@ $rc = ( isset($_GET['country'])) ? $_GET['country'] : false;
 
 
 			</div>
-			<div class="col-sm-8 col-sm-pull-4">
+			<div class="column big_column ">
 				<?php
 
 			if (isset($rs) && $rs != '' ):

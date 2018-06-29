@@ -34,10 +34,10 @@
 	<div class="black">
 	<div class="container">
 	<h2 style="background: white; display: inline-block; padding: 0 20px; color: black; margin: 0 0 20px;">Au programme</h2><br><br>
-		<div class="row">
+		<div class="column_container">
 
 		<?php while ( $loop->have_posts() ) : $loop->the_post(); ?>
-			<div class="col-sm-4">
+			<div class="column">
 			<a href="<?php the_permalink(); ?>">
 				<div class="reperage_box stripes upcoming">
 					<div class="white">

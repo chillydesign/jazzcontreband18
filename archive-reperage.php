@@ -2,13 +2,15 @@
 
 
 
+<?php get_template_part( 'partials/page-header' ); ?>
+
 
 <!-- section -->
 <section class="container">
 
 
-	<div class="row">
-		<div class="col-sm-8">
+	<div class="column_container">
+		<div class="column big_column">
 
 			<h1><?php _e( 'Repérage', 'webfactor' ); ?></h1>
 
@@ -19,7 +21,7 @@
 			<?php get_template_part('pagination'); ?>
 
 		</div>
-		<div class="col-sm-4">
+		<div class="column small_column">
 
 				<p><a href="<?php echo  site_url('/reperage-admin'); ?>">New Reperage</a></p>
 
