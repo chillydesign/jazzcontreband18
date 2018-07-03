@@ -28,6 +28,7 @@
     "gulp-autoprefixer": "^4.0.0",
     "gulp-minify": "^1.0.0",
     "gulp-sass": "^4.0.0",
+    "hygen": "^1.6.2",
     "webpack": "^4.12.1",
     "webpack-cli": "^3.0.8"
   },
