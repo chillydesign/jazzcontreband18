@@ -84,6 +84,15 @@ body {
 
 
 
+.download_columns {
+    justify-content:  flex-start;
+    .column {
+        padding: 0;
+        max-width: 33.333%;
+
+    }
+}
+
 .green_box, .yellow_box, .blue_box, .black_box, .white_box {
   padding: 20px 50px;
   margin: 0 0;
