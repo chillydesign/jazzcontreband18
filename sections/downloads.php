@@ -1,6 +1,7 @@
+<div class="blue_box">
 
 	<div class="container ">
-        <div class="blue_box">
+
 	<?php if(!empty(get_sub_field('introduction'))){ ?>
 		<div class="introduction"><?php echo get_sub_field('introduction'); ?></div>
 	<?php } ?>
@@ -15,5 +16,9 @@
 		<?php endwhile; ?>
 		</div> <!-- END OF ROW -->
 
-</div>
+
 	</div><!--  END OF CONTAINER -->
+</div>
+<br>
+<br>
+<br>
