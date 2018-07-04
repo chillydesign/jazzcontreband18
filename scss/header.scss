@@ -35,7 +35,6 @@ nav {
 
     ul#menu_navigation {
         position: fixed;
-        overflow-y: scroll;
         top:0;
         bottom: 0;
         right: 0;
@@ -48,8 +47,10 @@ nav {
         background: transparentize($brand_color, 0.06);
         text-align: left;
         transition: all 0.3s;
+        overflow-y: scroll;
 
         @media (min-width: $mobile_width) {
+          overflow-y: visible;
             width: auto;
             background: white;
             display: inline-block;

@@ -92,21 +92,22 @@
                         </div>
                     <?php endif; // end of website ?>
 
+                    <?php if ($has_image): ?>
+                        <div class="event_featured_image">
+                            <img src="<?php echo $image; ?>" alt="">
+                            <?php $thumb_copyright= get_post(get_post_thumbnail_id())->post_content; ?>
+                            <?php if ( $thumb_copyright != '') : ?>
+                                <p class="copyright_info"><?php echo $thumb_copyright; ?></p>
+                            <?php endif; ?>
+                        </div>
+                    <?php endif; // end of if hasimage; ?>
 
                 </div> <!-- END OF GREEN BOX -->
-                <?php if ($has_image): ?>
-                    <div class="event_featured_image">
-                        <img src="<?php echo $image; ?>" alt="">
-                        <?php $thumb_copyright= get_post(get_post_thumbnail_id())->post_content; ?>
-                        <?php if ( $thumb_copyright != '') : ?>
-                            <p class="copyright_info"><?php echo $thumb_copyright; ?></p>
-                        <?php endif; ?>
-                    </div>
-                <?php endif; // end of if hasimage; ?>
+
 
 
                 <?php if ($members && $artist_name_minor ) :  ?>
-                    <div id="map_section">
+                    <div id="map_section" class="single_evnt_map">
                         <?php echo do_shortcode('[jazz_membres_map]'); ?>
                     </div>
                 <?php endif; // end of if members ?>
@@ -157,7 +158,7 @@
                         <?php $website_minor = get_field('website_minor'); ?>
                         <?php $description_minor = get_field('description_minor'); ?>
                         <?php $minor_photo = get_field('photo_minor'); ?>
-                        <div class="yellow_box" id="minor_artist">
+                        <div class="blue_box" id="minor_artist">
                             <div class="content event_membres_details">
 
                                 <h2 class="bordered_title"> <?php echo $artist_name_minor; ?></h2>
@@ -187,25 +188,27 @@
                                     </div>
                                 <?php endif; // end if websiteminor ?>
                             </div>
-                        </div> <!-- END OF YELLOW BOX -->
+
+
+                                                    <?php if ($minor_photo): ?>
+                                                    <div class="event_featured_image">
+                                                        <img src="<?php echo $minor_photo['url']; ?>">
+                                                        <?php if ($minor_photo['description'] != '') : ?>
+                                                            <p class="copyright_info">
+                                                                <?php echo $minor_photo['description']; ?>
+                                                            </p>
+                                                        <?php endif; ?>
+                                                    </div>
+                                                    <?php endif; // end of if $minor_photo; ?>
+                        </div> <!-- END OF blue BOX -->
 
 
 
-                        <?php if ($minor_photo): ?>
-                        <div class="event_featured_image">
-                            <img src="<?php echo $minor_photo['url']; ?>">
-                            <?php if ($minor_photo['description'] != '') : ?>
-                                <p class="copyright_info">
-                                    <?php echo $minor_photo['description']; ?>
-                                </p>
-                            <?php endif; ?>
-                        </div>
-                        <?php endif; // end of if $minor_photo; ?>
 
                         <?php endif; // end if $artist_name_minor ?>
 
                         <?php if ($members && $artist_name_minor == false ) :  ?>
-                            <div id="map_section">
+                            <div id="map_section" class="single_evnt_map">
                                 <?php echo do_shortcode('[jazz_membres_map]'); ?>
                             </div>
                         <?php endif; // end of if members ?>
