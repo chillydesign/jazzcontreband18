@@ -9,16 +9,14 @@
     <?php $image =  get_sub_field('image'); ?>
     <?php $content =  get_sub_field('content'); ?>
     <div class="column">
-    <div class=" reperage_box stripes upcoming">
-      <div class="white">
-        <div class="event_thumb" style="padding:30%; background-image:url(<?php echo $image['sizes']['small'] ; ?>);">
+        <div class="press_container">
+        <div class="press_thumb" style=" background-image:url(<?php echo $image['sizes']['small'] ; ?>);">
           <div class="press_description">
             <h3> <?php echo $title ?></h3>
           </div>
         </div>
         <div class="press_content"><?php echo $content; ?></div>
         </div>
-      </div>
     </div>
   <?php  if($count % 3 == 2) echo '</div> <!-- END OF COLUMNCONTAINER --> <div class="column_container">' ; ?>
 <?php $count++; ?>
