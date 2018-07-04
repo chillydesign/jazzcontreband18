@@ -15,7 +15,7 @@
 
         <?php echo do_shortcode('[jazz_membres_map]'); ?>
         </div>
-        <section class="section  section_colonnes">
+        <section class="section  section_colonnes" style="margin-bottom:80px;">
 
 
 

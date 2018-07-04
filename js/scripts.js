@@ -9,6 +9,28 @@
 		'use strict';
 
 
+		$('#partner_slider').bxSlider({
+			minSlides:3,
+			maxSlides:3,
+			slideWidth:300,
+			slideMargin:10,
+			auto:!0,
+			controls:!1,
+			autoControls:!1,
+			pager:!1,
+			ticker:false,
+			pause: 2000
+		});
+
+		$('.bxslider').bxSlider({
+			auto:!0,
+			controls:!1,
+			autoControls:!1,
+			pager:!1
+		});
+
+
+
 
         french_moment();
 

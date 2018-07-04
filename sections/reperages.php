@@ -58,14 +58,14 @@ $rc = ( isset($_GET['country'])) ? $_GET['country'] : false;
 
 			elseif (isset($rc) && $rc != '' ):
 
-						echo do_shortcode('[ajax_load_more post_type="reperage" meta_key="country" meta_value="' . $rc . '" ]');
+						echo do_shortcode('[ajax_load_more post_type="reperage" meta_key="country" meta_value="' . $rc . '" posts_per_page="4"]');
 
 			elseif (isset($ru) && $ru != '' ):
 
-				echo do_shortcode('[ajax_load_more post_type="reperage" author="' . $ru . '" ]');
+				echo do_shortcode('[ajax_load_more post_type="reperage" author="' . $ru . '" posts_per_page="4" ]');
 
 			else:
-				echo do_shortcode('[ajax_load_more post_type="reperage"]');
+				echo do_shortcode('[ajax_load_more post_type="reperage" posts_per_page="8"]');
 			endif;
 
 			?>

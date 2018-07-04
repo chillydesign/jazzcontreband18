@@ -19,14 +19,18 @@ $loop = new WP_Query( $args );
 ?>
 
 
-<div class="black">
+<div class="blue_box upcoming" style="display:none">
     <div class="container"  style="text-align: center;">
         <h2><a href ="<?php echo get_sub_field('link'); ?>">Prochainement</a></h2>
-        <p><a href ="<?php echo get_sub_field('link'); ?>"><?php echo get_sub_field('link_text'); ?></a></p>
+        <h6><a href ="<?php echo get_sub_field('link'); ?>"><?php echo get_sub_field('link_text'); ?></a></h6>
     </div>
 </div>
 
 
+
+<div id="prochainement">
+  <h3>Prochainement</h3>
+</div>
 <div id="upcoming_events">
 
     <div class="column_container">

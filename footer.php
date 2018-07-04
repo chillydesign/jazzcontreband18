@@ -32,6 +32,7 @@
 <script type="text/javascript" src="<?php echo $tdu; ?>/js/lib/jquery.justifiedGallery.min.js"></script>
 <script type="text/javascript" src="<?php echo $tdu; ?>/js/lib/featherlight.min.js"></script>
 <script type="text/javascript" src="<?php echo $tdu; ?>/js/lib/featherlight.gallery.min.js"></script>
+<script type="text/javascript" src="<?php echo $tdu; ?>/js/lib/jquery.bxslider.min.js"></script>
 
 <!-- <script type='text/javascript' src='<?php echo get_site_url(); ?>/wp-includes/js/jquery/jquery.js?ver=1.12.4'></script>
 <script type="text/javascript" src="<?php echo $tdu; ?>/bower_components/bxslider-4/dist/jquery.bxslider.min.js"></script>
