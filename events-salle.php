@@ -11,11 +11,19 @@
 		'orderby'    => 'meta_value_num',
 		'order'      => 'ASC',
 		'meta_query' => array(
+			'relation' => 'AND',
 			array(
 				'key'     => 'members',
 				'value'   => $id,
 				'compare' => '=',
+			),
+			array(
+				'key'     => 'dates_0_date',
+				'value'   => $today,
+				'compare' => '>=',
+				'type' => 'numeric'
 			)
+
 		),
 		'tax_query' => array(
 		array(

@@ -613,10 +613,16 @@ $args = array(
 acf_add_options_page( $args );
 
 
-
+function parse_date($string) {
+  return  date_parse_from_format('Ymd', $string);
+}
 
 
 function nice_event_dates($dates) {
+
+
+var_dump($dates);
+
     if (sizeof($dates) == 0) {
         return '-';
     } else if (sizeof($dates) == 1) {
@@ -625,8 +631,10 @@ function nice_event_dates($dates) {
     } else {
         $first = current($dates);
         $last = end($dates);
-        $nice_first =  strftime( '%d', strtotime( $first['date'] ));
-        $nice_last =  strftime( '%d.%m', strtotime( $last['date'] ));
+
+
+        $nice_first =  strftime( '%d', strtotime( parse_date($first['date']) ));
+        $nice_last =  strftime( '%d.%m', strtotime( parse_date($last['date']) ));
         return $nice_first . ' → '  . $nice_last;
 
     }

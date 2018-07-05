@@ -1,9 +1,10 @@
 
 <!-- SHARED TEMPLATE BEWEEN FESTIVAL AND SAISON EVENEMENTS -->
 <?php global $image; global $has_image; ?>
+<?php $id = get_the_ID(); ?>
 <?php $ticketing_link = get_field('ticketing_link'); ?>
 <?php $practical_info = get_field('information'); ?>
-<?php $dates = get_field('dates'); ?>
+<?php $dates = get_field('dates', $id, false); ?>
 <?php $members = get_field('members'); ?>
 <?php $tarif_plein = get_field('tarif_plein'); ?>
 <?php $tarifs_reduits = get_field('tarifs_reduits'); ?>
@@ -16,7 +17,6 @@
 <?php $website = get_field('website'); ?>
 <?php $countries = get_field('countries'); ?>
 <?php $artist_name_minor = get_field('artist_name_minor'); ?>
-<?php $id = get_the_ID(); ?>
 
 <?php get_template_part( 'partials/page-header' ); ?>
 <!-- article -->
