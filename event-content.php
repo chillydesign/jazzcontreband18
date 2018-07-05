@@ -142,7 +142,7 @@
                     <?php endif; ?>
                     <?php if( $ticketing_link ) :  ?>
                         <hr>
-                        <h3>Billeterie</h3>
+                        <h3>Billetterie</h3>
                         <p>
                             <a class="event_website" href ="<?php echo $ticketing_link;?>" target ="_blank"><i class="fa fa-ticket" aria-hidden="true"></i>  Acheter vos tickets en ligne</a>
                         </p>

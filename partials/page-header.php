@@ -2,7 +2,8 @@
 global $image;
 
 if ( $image == NULL ||  $image == false) {
-     $image = get_template_directory_uri() . '/img/placeholder.jpg';
+     //$image = get_template_directory_uri() . '/img/placeholder.jpg';
+     $image = get_site_url() . '/wp-content/themes/jazzcontreband18/img/jazz_photo_1.jpg';
 };
  ?>
 <header>
