@@ -6,7 +6,12 @@
 
         <?php get_template_part( 'partials/page-header' ); ?>
 
-
+				<?php $phone = get_field('phone'); ?>
+							<?php $address = get_field('address'); ?>
+							<?php $country = get_field('country'); ?>
+							<?php $website = get_field('website'); ?>
+							<?php // add https:// if not included in the url  ?>
+							<?php $website_http = ( strpos($website, '//') > 0  ) ?  $website :  'http://' . $website   ; ?>
 
 				<div class="container">
 				    <div class="column_container column_container_reversed">

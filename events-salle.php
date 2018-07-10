@@ -6,7 +6,7 @@
 
 	$args = array(
 		'post_type' => $event_type,
-		'posts_per_page' => 3,
+		'posts_per_page' => -1,
 		'meta_key'   => 'dates_0_date',
 		'orderby'    => 'meta_value_num',
 		'order'      => 'ASC',
@@ -41,7 +41,7 @@
 
 	<div class="blue_box upcoming" style="display:none">
 	    <div class="container"  style="text-align: center;">
-	        <h2><a href ="<?php echo get_sub_field('link'); ?>">Prochainement</a></h2>
+	        <h2><a href ="<?php echo get_sub_field('link'); ?>">A voir ici</a></h2>
 	        <h6><a href ="<?php echo get_sub_field('link'); ?>"><?php echo get_sub_field('link_text'); ?></a></h6>
 	    </div>
 	</div>
@@ -53,10 +53,10 @@
 	</div>
 	<div id="upcoming_events">
 
-	    <div class="column_container">
+	    <div class="column_container scroll_column_container">
 	        <?php $color_classes = [ 'green_event', 'yellow_event', 'blue_event' ]; ?>
 	        <?php $o = 0;	while ( $loop->have_posts() ) : $loop->the_post(); ?>
-	            <div class="column upcoming_event_column <?php echo $color_classes[$o]; $o++ ?> ">
+	            <div class="column upcoming_event_column <?php echo $color_classes[$o % 3]; $o++ ?> ">
 	                    <a href="<?php the_permalink(); ?>">
 	                        <div class="event_thumb" style=" background-image:url(<?php if(has_post_thumbnail()){echo get_the_post_thumbnail_url(get_the_ID(), 'medium'); } else {echo get_template_directory_uri() . '/img/placeholder.jpg';} ?>); background-size:cover;"></div>
 	                            <div class="upcoming_description">

@@ -65,7 +65,9 @@
                                 <span class="event_meta"><i class="fa fa-clock-o" aria-hidden="true"></i> <?php echo $time; ?></span>
                             <?php endif; // end of if $time ?>
                             <?php if (!empty($members)) : ?>
+                                <a href="<?php echo $members->guid; ?>" target="salle">
                                 <span class="event_meta"><i class="fa fa-map-marker" aria-hidden="true"></i> <?php echo $members->post_title; ?> - <?php echo get_field('ville', $members->ID); ?></span>
+                              </a>
                             <?php endif; // end of if members ?>
                         </p>
                     <?php endif; // end of if dates ?>
@@ -76,7 +78,7 @@
 
                     <?php if( $lineup): ?>
                         <div class="line-up">
-                            <p>Line-up: </p>
+                            <h4>Line-up: </h4>
                             <?php echo $lineup;?>
                         </div>
                     <?php endif; // end of lineup ?>
@@ -92,7 +94,17 @@
                         </div>
                     <?php endif; // end of website ?>
 
-                    <?php if ($has_image): ?>
+
+                    <?php if(get_field('image')): ?>
+                      <?php $image = get_field('image')['url']; ?>
+                      <div class="event_featured_image">
+                          <img src="<?php echo $image; ?>" alt="">
+                          <?php $thumb_copyright= get_post(get_post_thumbnail_id())->post_content; ?>
+                          <?php if ( $thumb_copyright != '') : ?>
+                              <p class="copyright_info"><?php echo $thumb_copyright; ?></p>
+                          <?php endif; ?>
+                      </div>
+                      <?php elseif ($has_image): ?>
                         <div class="event_featured_image">
                             <img src="<?php echo $image; ?>" alt="">
                             <?php $thumb_copyright= get_post(get_post_thumbnail_id())->post_content; ?>
@@ -136,7 +148,7 @@
                             <?php endif;  // end of if $tarifs_reduits ?>
                             <?php if($tarif_passe_partout_jcb) : ?>
                                 <div class="pp_jcb"><p><strong>Tarif passe-partout JCB</strong>: <?php echo $tarif_passe_partout_jcb; ?></p></div>
-                                <h6><a target="_blank" href="https://etickets.infomaniak.com/shop/YwGYSsVfjX/"><i class="fa fa-key" aria-hidden="true"></i>  Acheter le passe-partout</a></h6>
+                                <h6><a target="_blank" href="https://etickets.infomaniak.com/shop/VjpxaBMv2i/"><i class="fa fa-key" aria-hidden="true"></i>  Acheter le passe-partout</a></h6>
                             <?php endif;  // end of if $tarif_passe_partout_jcb  ?>
                         </div>
                     <?php endif; ?>
@@ -173,7 +185,7 @@
 
                                 <?php if($line_up_minor) : ?>
                                     <div class="line-up">
-                                        <p>Line-up: </p>
+                                        <h4>Line-up: </h4>
                                         <?php echo $line_up_minor;?>
                                     </div>
                                 <?php endif; // end if linupminor ?>
@@ -229,7 +241,7 @@
         <p class="yellow_p"><a target="_blank" href="<?php echo get_field('ticketing_link');?>"><i class="fa fa-ticket" aria-hidden="true"></i> Billetterie</a></p><br>
     <?php }  ?>
     <?php if(get_field('tarif_passe-partout_jcb')){ ?>
-        <p><a target="_blank" href="https://etickets.infomaniak.com/shop/YwGYSsVfjX/"><i class="fa fa-key" aria-hidden="true"></i> Passe-Partout JCB</a></p>
+        <p><a target="_blank" href="https://etickets.infomaniak.com/shop/VjpxaBMv2i/"><i class="fa fa-key" aria-hidden="true"></i> Passe-Partout JCB</a></p>
     <?php } ?>
 <?php endif; ?>
 

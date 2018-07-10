@@ -29,7 +29,7 @@ $events = 	new WP_Query(array(
                 <?php get_template_part( 'partials/logo' ); ?>
             </div>
             <div class="column big_column" id="date_box_container">
-                <div id="date_box">1→28. <br> 10.2018</div>
+                <div id="date_box">1→30. <br> 10.2018</div>
             </div>
         </div>
 

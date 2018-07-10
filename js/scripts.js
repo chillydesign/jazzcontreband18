@@ -257,7 +257,7 @@ function addPointToMap(map,  location, bounds, infowindow, markers ) {
 
 
 		var customMarker = {
-			url: 'https://jazzcontreband.com/wp-content/themes/jazzcontreband/img/marker.svg',
+			url: 'https://jazzcontreband.com/wp-content/themes/jazzcontreband18/img/marker.svg',
 			size: new google.maps.Size(14, 20),
 			origin: new google.maps.Point(0, 0),
 		//	anchor: new google.maps.Point(15, 22)

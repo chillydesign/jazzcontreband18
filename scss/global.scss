@@ -85,12 +85,12 @@ body {
 
 
 .download_columns {
-    justify-content:  flex-start;
-    .column {
-        padding: 0;
-        max-width: 33.333%;
+  justify-content:  flex-start;
+  .column {
+    padding: 0;
+    max-width: 33.333%;
 
-    }
+  }
 }
 
 .green_box, .yellow_box, .blue_box, .black_box, .white_box {
@@ -345,8 +345,8 @@ section  {
   top: -20px;
 
   @media (min-width: $mobile_width) {
-    top: -300px;
-    margin-bottom: -300px;
+    top: -150px;
+    margin-bottom: -150px;
   }
 
   .event_styles {
@@ -420,7 +420,14 @@ a.member_link {
   }
 }
 
-
+.pricing {
+  p{
+    padding-bottom: 0;
+  }
+  h6 {
+    padding-top: 20px;
+  }
+}
 
 
 .loading {
@@ -477,7 +484,7 @@ ul#events {
     .event_image {
       background: no-repeat center center transparentize(white,0.5);
       background-size: cover;
-      height: 200px;
+      height: 155px;
       width:100%;
     }
     .prog_evnt_details {
@@ -532,6 +539,7 @@ ul#events {
       left: -100px;
       text-align: left;
       text-transform: uppercase;
+      width: 275px;
     }
   }
   #upcoming_events {
@@ -540,31 +548,54 @@ ul#events {
     margin-left: 60px;
     margin-bottom: 0;
     min-height: 350px;
+    .column_container{
+      background: black;
+      justify-content: start;
 
-    .upcoming_event_column {
-      padding: 0;
-      min-height: 350px;
+      .upcoming_event_column {
+        padding: 0;
+        min-height: 350px;
 
-      .event_thumb {
-        background: no-repeat center center;
-        background-size: cover;
-        border-top: 20px solid transparentize(white, 0.5);
-        height: 200px;
-        filter: grayscale(100%);
-      }
-      .upcoming_description {
-        padding: 20px;
-        h3 {
-          text-transform: uppercase;
+
+        .event_thumb {
+          background: no-repeat top center;
+          background-size: cover;
+          border-top: 20px solid transparentize(white, 0.5);
+          height: 200px;
+          filter: grayscale(100%);
+        }
+        .upcoming_description {
+          padding: 20px;
+          h3 {
+            text-transform: uppercase;
+          }
+        }
+
+        .event_date {
+          font-size: 1.9em;
         }
       }
-
-      .event_date {
-        font-size: 1.9em;
-      }
     }
+
   }
 
+}
+
+.scroll_column_container {
+  overflow: scroll;
+  .upcoming_event_column{
+      min-width: 300px!important;
+  }
+  @media (min-width:$mobile_width) {
+    .upcoming_event_column{
+      max-width: 51%;
+    }
+  }
+  @media (min-width:$tablet_width) {
+    .upcoming_event_column{
+      max-width: 34%;
+    }
+  }
 }
 
 
@@ -697,92 +728,92 @@ span.drop_cap {
 
 
 .event_gallery {
-    position: relative;
-    display: inline-block;
-    height: 300px;
-    width: 100%;
-    margin: 0 0 50px;
+  position: relative;
+  display: inline-block;
+  height: 300px;
+  width: 100%;
+  margin: 0 0 50px;
 
+
+  @media (min-width: $mobile_width) {
+    overflow: hidden;
+  }
+
+  // .event_thumb {}
+
+  .upcoming_description {
+
+    padding: 10px;
+    background: $yellow;
+    color: $black;
+    bottom: 0;
+    left: 0;
+    right: 0;
 
     @media (min-width: $mobile_width) {
-        overflow: hidden;
-     }
-
-     // .event_thumb {}
-
-    .upcoming_description {
-
-        padding: 10px;
-        background: $yellow;
-        color: $black;
-        bottom: 0;
-        left: 0;
-        right: 0;
-
-            @media (min-width: $mobile_width) {
-                position: absolute;
-             }
-
-        h3 {
-            padding: 0;
-            font-size: 2.3em;
-        }
-
+      position: absolute;
     }
+
+    h3 {
+      padding: 0;
+      font-size: 2.3em;
+    }
+
+  }
 }
 
 
 .press_container {
-    margin: 20px 0 10px;
-    font-size: 0.8em;
-    .press_thumb {
-        background: no-repeat center center;
-        background-size: cover;
-        height: 300px;
-        width: 100%;
-        position: relative;
-        margin: 0 0 10px;
-        .press_description {
-            position: absolute;
-            padding: 10px;
-            background: $yellow;
-            color: $black;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            h3 {
-                padding: 0;
-                font-size: 2.3em;
-            }
-        }
+  margin: 20px 0 10px;
+  font-size: 0.8em;
+  .press_thumb {
+    background: no-repeat center center;
+    background-size: cover;
+    height: 300px;
+    width: 100%;
+    position: relative;
+    margin: 0 0 10px;
+    .press_description {
+      position: absolute;
+      padding: 10px;
+      background: $yellow;
+      color: $black;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      h3 {
+        padding: 0;
+        font-size: 2.3em;
+      }
     }
-     p {
-         padding: 0 0 5px;
-     }
+  }
+  p {
+    padding: 0 0 5px;
+  }
 }
 
 
 
 .loginformcontainer {
-    position: fixed;
-    width: 100vw;
-    height: 100vh;
-    background: rgba(0,0,0,0.7);
-    z-index: 999;
-    top: 0;
-    display: none;
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0,0,0,0.7);
+  z-index: 999;
+  top: 0;
+  display: none;
 }
 
 
 .loginform, .lostpasswd {
-    width: 40%;
-    min-width: 250px;
-    margin: 100px auto;
-    position: relative;
-    /*top: -700px;*/
-    z-index: 9;
-    padding: 50px;
-    box-shadow: 0px 0px 60px 0px rgba(0,0,0,0.8);
+  width: 40%;
+  min-width: 250px;
+  margin: 100px auto;
+  position: relative;
+  /*top: -700px;*/
+  z-index: 9;
+  padding: 50px;
+  box-shadow: 0px 0px 60px 0px rgba(0,0,0,0.8);
 
 }
 
@@ -790,47 +821,47 @@ span.drop_cap {
 .lostpasswd {display: none;}
 
 .login-lostpsswd {
-	float: right;
-    margin-top: 10px;
+  float: right;
+  margin-top: 10px;
 }
 
 input#rememberme {
-    width: 10px;
-    position: relative;
-    top: 8px;
-    display: inline-block;
-    top: 0px;
+  width: 10px;
+  position: relative;
+  top: 8px;
+  display: inline-block;
+  top: 0px;
 }
 
 input#rememberme:checked{
-	background-image: url(../img/check.png);
-	background-size: 100%;
-	background-repeat: no-repeat;
+  background-image: url(../img/check.png);
+  background-size: 100%;
+  background-repeat: no-repeat;
 }
 
 input#wp-submit, input.user-submit {
-	background-color: $primary-color;
-	border-radius: $border-radius;
-	font-weight: bold;
-	text-transform: uppercase;
+  background-color: $primary-color;
+  border-radius: $border-radius;
+  font-weight: bold;
+  text-transform: uppercase;
 }
 
 input#wp-submit {
-    font-size: 1em;
+  font-size: 1em;
 }
 
 
 .lostpasswd input#user_login {
-    margin-bottom: 30px;
+  margin-bottom: 30px;
 }
 
 p.forgottenpassword {
-    text-align: center;
-    margin: -30px 0 -50px;
+  text-align: center;
+  margin: -30px 0 -50px;
 }
 p.notforgotten{
-	text-align: center;
-	margin-right: 0 0 -50px;
+  text-align: center;
+  margin-right: 0 0 -50px;
 }
 
 
@@ -848,4 +879,41 @@ input.button {
   font-size: 1em;
   text-transform: uppercase;
   font-weight: bold;
+}
+
+div.wpcf7{
+  input {
+    font-size: 1.5em;
+    padding: 9px;
+    border: 0;
+  }
+
+  input[type="submit"]{
+    cursor: pointer;
+    transition: all 0.3s;
+    &:hover, &:focus, &:active {
+      background: #998f00;
+    }
+  }
+  margin-top: -30px;
+  h3 {
+    margin-top: 30px;
+  }
+  p{
+    padding-bottom: 5px;
+  }
+  textarea {
+    width: 100%;
+  }
+  input[type="checkbox"]{
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+    margin-right: 0px;
+    top: 5px;
+    position: relative;
+  }
+  span.wpcf7-list-item-label {
+    font-size: 1.5em;
+}
 }
