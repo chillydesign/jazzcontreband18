@@ -891,6 +891,7 @@ div.wpcf7{
   input[type="submit"]{
     cursor: pointer;
     transition: all 0.3s;
+    background: $yellow;
     &:hover, &:focus, &:active {
       background: #998f00;
     }
@@ -916,4 +917,22 @@ div.wpcf7{
   span.wpcf7-list-item-label {
     font-size: 1.5em;
 }
+}
+
+div.wpcf7-response-output {
+    margin: 0;
+    padding: 10px 20px;
+    border: 2px solid #ff0000;
+    background: #ff0000;
+}
+
+.wpcf7-response-output {
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+div.wpcf7-mail-sent-ok {
+    border: 2px solid #398f14;
+    background: #398f14;
+    padding: 10px 20px;
 }
