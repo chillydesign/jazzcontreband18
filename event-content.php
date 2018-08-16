@@ -64,11 +64,20 @@
                             <?php if ( $time ) :?>
                                 <span class="event_meta"><i class="fa fa-clock-o" aria-hidden="true"></i> <?php echo $time; ?></span>
                             <?php endif; // end of if $time ?>
-                            <?php if (!empty($members)) : ?>
-                                <a href="<?php echo $members->guid; ?>" target="salle">
-                                <span class="event_meta"><i class="fa fa-map-marker" aria-hidden="true"></i> <?php echo $members->post_title; ?> - <?php echo get_field('ville', $members->ID); ?></span>
-                              </a>
-                            <?php endif; // end of if members ?>
+                            <?php if(!empty(get_field('venue_name'))) : ?>
+                              <span class="event_meta"><i class="fa fa-map-marker" aria-hidden="true"></i> <?php echo get_field('venue_name'); ?></span>
+                              <?php if (!empty($members)) : ?>
+                                  <br><a href="<?php echo $members->guid; ?>" target="salle">
+                                  <span class="event_meta">Salle organisatrice : <?php echo $members->post_title; ?> - <?php echo get_field('ville', $members->ID); ?></span>
+                                </a>
+                              <?php endif; // end of if members ?>
+                            <?php else : ?>
+                              <?php if (!empty($members)) : ?>
+                                  <br>Salle organisatrice : <a href="<?php echo $members->guid; ?>" target="salle">
+                                  <span class="event_meta"><i class="fa fa-map-marker" aria-hidden="true"></i> <?php echo $members->post_title; ?> - <?php echo get_field('ville', $members->ID); ?></span>
+                                </a>
+                              <?php endif; // end of if members ?>
+                            <?php endif; //end of if venur_name ?>
                         </p>
                     <?php endif; // end of if dates ?>
 
@@ -118,7 +127,33 @@
 
 
 
-                <?php if ($members && $artist_name_minor ) :  ?>
+                <?php if(get_field('venue_gmap')) :
+
+                  $locations = [];
+                  $latlng = get_field('venue_gmap');
+                  $latlngx = explode( ',', $latlng   );
+                  $obj = new stdClass();
+                  $obj->title = get_field('venue_name');
+                  $obj->id = '';
+                  $obj->url = '';
+                  $obj->blah = $latlng;
+                  $classes = 'small_map';
+
+
+                  if(is_array($latlngx) && sizeof($latlngx)==2){
+                    $obj->lat = $latlngx[0];
+                    $obj->lng = $latlngx[1];
+
+                  }
+                  array_push(  $locations,  $obj);
+                  echo '  <div id="map_section" class="single_evnt_map">
+                  <script> var $member_locations = ' . json_encode($locations) .' </script>
+                  <div class=" ' .  $classes .'" id="member_map_container"></div>
+                    </div>';
+
+                ?>
+
+              <?php elseif ($members && $artist_name_minor ) :  ?>
                     <div id="map_section" class="single_evnt_map">
                         <?php echo do_shortcode('[jazz_membres_map]'); ?>
                     </div>

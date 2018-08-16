@@ -1,4 +1,8 @@
 <?php get_header(); ?>
+<?php if ( is_front_page()  == false) : ?>
+		<?php $image = (has_post_thumbnail())  ?  get_the_post_thumbnail_url() : false ?>
+		<?php get_template_part( 'partials/page-header' ); ?>
+<?php endif; ?>
 
 
 		<!-- section -->

@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 
-	
+
 	<!-- section -->
 	<section>
 
@@ -39,7 +39,6 @@
 
 			<?php edit_post_link(); // Always handy to have Edit Post Links available ?>
 
-			<?php comments_template(); ?>
 
 		</article>
 		<!-- /article -->
@@ -60,7 +59,7 @@
 
 	</section>
 	<!-- /section -->
-	
+
 
 <?php get_sidebar(); ?>
 
