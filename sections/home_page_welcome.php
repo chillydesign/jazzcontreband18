@@ -5,6 +5,7 @@ $content =  get_sub_field('content');
 $numbers =  get_sub_field('numbers');
 $image =  get_sub_field('image');
 $yellow_box_content =  get_sub_field('yellow_box_content');
+$blue_box_content =  get_sub_field('blue_box_content');
 
 $today = date("Ymd");
 $events = 	new WP_Query(array(
@@ -100,6 +101,14 @@ $events = 	new WP_Query(array(
                 <?php endif; ?>
 
             </div>
+
+            <?php if ($blue_box_content) : ?>
+
+                <div class="blue_box">
+                    <hr  />
+                    <?php echo $blue_box_content; ?>
+            </div>
+            <?php endif; ?>
         </div>
 
 
