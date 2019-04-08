@@ -3,7 +3,7 @@
 
 	<?php if (have_posts()): while (have_posts()) : the_post(); ?>
 
-        <?php if ( is_front_page()  == false &&  $post->post_name != 'Accueil' ) : ?>
+        <?php if ( is_front_page()  == false &&  $post->post_name != 'accueil' ) : ?>
             <?php $image = (has_post_thumbnail())  ?  get_the_post_thumbnail_url() : false ?>
             <?php get_template_part( 'partials/page-header' ); ?>
         <?php endif; ?>

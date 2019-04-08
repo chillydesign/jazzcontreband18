@@ -3,6 +3,8 @@
 $tdu = get_template_directory_uri();
 $content =  get_sub_field('content');
 $numbers =  get_sub_field('numbers');
+$image =  get_sub_field('image');
+$yellow_box_content =  get_sub_field('$yellow_box_content');
 
 $today = date("Ymd");
 $events = 	new WP_Query(array(
@@ -38,7 +40,7 @@ $events = 	new WP_Query(array(
     </div>
 
 
-<?php $image =  get_sub_field('image') ; ?>
+
 <?php $image_url = ($image) ? $image['sizes']['large']  : $tdu . '/img/jazz_photo_1.jpg'; ?>
     <div id="header_background" style="background-image:url('<?php echo $image_url; ?>');"></div>
 </header>
@@ -91,6 +93,11 @@ $events = 	new WP_Query(array(
 
                 <?php endwhile; wp_reset_postdata(); ?>
 
+
+                <?php if ($yellow_box_content) : ?>
+                    <hr />
+                    <?php echo $yellow_box_content; ?>
+                <?php endif; ?>
 
             </div>
         </div>
