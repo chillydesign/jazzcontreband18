@@ -4,7 +4,7 @@ $tdu = get_template_directory_uri();
 $content =  get_sub_field('content');
 $numbers =  get_sub_field('numbers');
 $image =  get_sub_field('image');
-$yellow_box_content =  get_sub_field('$yellow_box_content');
+$yellow_box_content =  get_sub_field('yellow_box_content');
 
 $today = date("Ymd");
 $events = 	new WP_Query(array(
@@ -73,6 +73,10 @@ $events = 	new WP_Query(array(
         <div id="agenda_front" class="column small_column ">
             <div class="yellow_box">
                 <hr  />
+            <?php if ($yellow_box_content) : ?>
+                <?php echo $yellow_box_content; ?>
+            <?php else: ?>
+
                 <h2>Prochainement</h2>
                 <h4>Festival JCB - octobre 2018</h4>
                 <p>Découvrez toute la programmation du festival JazzContreBand ici!</p>
@@ -93,10 +97,6 @@ $events = 	new WP_Query(array(
 
                 <?php endwhile; wp_reset_postdata(); ?>
 
-
-                <?php if ($yellow_box_content) : ?>
-                    <hr />
-                    <?php echo $yellow_box_content; ?>
                 <?php endif; ?>
 
             </div>
