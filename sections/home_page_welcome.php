@@ -104,7 +104,7 @@ $events = 	new WP_Query(array(
 
             <?php if ($blue_box_content) : ?>
 
-                <div class="blue_box">
+                <div class="blue_box" >
                     <hr  />
                     <?php echo $blue_box_content; ?>
             </div>

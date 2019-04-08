@@ -247,6 +247,10 @@ section  {
   @media (min-width: $mobile_width) {
     margin: -60px 0 -30px;
   }
+
+  .blue_box {
+      margin-top: 40px;
+  }
 }
 
 
@@ -714,12 +718,17 @@ section.section.section_partners {
 ///General styles
 
 span.drop_cap {
-  font-size: 3em;
-  font-weight: bold;
-  text-transform: uppercase;
-  margin: 7px 5px 0px 0;
-  display: inline-block;
-  line-height: 1;
+    font-size: 2em;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin: 7px 5px 0px 0;
+    display: inline-block;
+    line-height: 1;
+
+    @media (min-width: $mobile_width) {
+        font-size: 3em;
+    }
+
 }
 
 .featured_box {
