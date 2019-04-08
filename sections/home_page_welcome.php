@@ -37,7 +37,10 @@ $events = 	new WP_Query(array(
         <div id="octagon"></div>
     </div>
 
-    <div id="header_background" style="background-image:url('<?php echo $tdu; ?>/img/jazz_photo_1.jpg');"></div>
+
+<?php $image =  get_sub_field('image') ; ?>
+<?php $image_url = ($image) ? $image['sizes']['large']  : $tdu . '/img/jazz_photo_1.jpg'; ?>
+    <div id="header_background" style="background-image:url('<?php echo $image_url; ?>');"></div>
 </header>
 
 <div class="container">
